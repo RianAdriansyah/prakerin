@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/siswa', 'SiswaController');
+Route::resource('/guru', 'GuruController');
 Route::get('/contoh2', 'SiswaController@hobi');
 Route::get('/contoh3', 'SiswaController@jurusan');
 Route::get('/contoh4', 'SiswaController@kelas');
