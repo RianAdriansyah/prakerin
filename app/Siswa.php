@@ -9,5 +9,6 @@ class Siswa extends Model
     protected $fillable = [
         'nama','sekolah','kelas','alamat','guru'
     ];
+    
     public $timestamps = true;
 }
