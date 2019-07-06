@@ -35,6 +35,11 @@ Route::get('/category', function () {
     return view('category');
 });
 
+Route::get('/admin', function () {
+    return view('backend/index');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

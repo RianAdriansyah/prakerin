@@ -87,12 +87,10 @@
 							<!-- Navigation -->
 							<nav class="main_nav">
 								<ul class="main_nav_list d-flex flex-row align-items-center justify-content-start">
-									<li><a href="/">home</a></li>
-									<li><a href="#">tech</a></li>
-									<li><a href="#">innovation</a></li>
-									<li><a href="#">videos</a></li>
+								<li><a href="/">home</a></li>
 									<li><a href="about">about</a></li>
 									<li><a href="contact">contact</a></li>
+									<li><a href="category">category</a></li>
 								</ul>
 							</nav>
 
@@ -541,12 +539,10 @@
 						<div class="footer_nav_container text-center">
 							<nav class="footer_nav">
 								<ul class="footer_nav_list d-flex flex-md-row flex-column align-items-center justify-content-start">
-									<li><a href="/">home</a></li>
-									<li><a href="#">tech</a></li>
-									<li><a href="#">innovation</a></li>
-									<li><a href="#">videos</a></li>
+								<li><a href="/">home</a></li>
 									<li><a href="about">about</a></li>
 									<li><a href="contact">contact</a></li>
+									<li><a href="category">category</a></li>
 								</ul>
 							</nav>
 						</div>

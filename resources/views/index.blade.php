@@ -35,7 +35,7 @@
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
@@ -53,7 +53,7 @@
 						<div class="header_content d-flex flex-row align-items-center justfy-content-start">
 							<div class="logo_container">
 								<a href="#">
-									<div class="logo"><span>Tech</span>mag</div>
+									<div class="logo"><span>Tech</span>Mag</div>
 									<div class="logo_sub">Innovation & Technology Magazine</div>
 								</a>
 							</div>
@@ -91,11 +91,9 @@
 							<nav class="main_nav">
 								<ul class="main_nav_list d-flex flex-row align-items-center justify-content-start">
 									<li><a href="/">home</a></li>
-									<li><a href="#">tech</a></li>
-									<li><a href="#">innovation</a></li>
-									<li><a href="#">videos</a></li>
 									<li><a href="about">about</a></li>
 									<li><a href="contact">contact</a></li>
+									<li><a href="category">category</a></li>
 								</ul>
 							</nav>
 
@@ -660,7 +658,7 @@
 							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 							<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
@@ -682,12 +680,10 @@
 						<div class="footer_nav_container text-center">
 							<nav class="footer_nav">
 								<ul class="footer_nav_list d-flex flex-md-row flex-column align-items-center justify-content-start">
-									<li><a href="/">home</a></li>
-									<li><a href="#">tech</a></li>
-									<li><a href="#">innovation</a></li>
-									<li><a href="#">videos</a></li>
+								<li><a href="/">home</a></li>
 									<li><a href="about">about</a></li>
 									<li><a href="contact">contact</a></li>
+									<li><a href="category">category</a></li>
 								</ul>
 							</nav>
 						</div>
