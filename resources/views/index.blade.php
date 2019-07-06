@@ -172,11 +172,11 @@
 				</div>
 				<!-- Slide -->
 				<div class="owl-item home_slider_item">
-					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider.jpg') }})"></div>
+					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider2.png') }})"></div>
 					<div class="home_slider_content text-center">
 						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
 							<div class="home_category"><a href="category">technology</a></div>
-							<div class="home_title">Building the Future</div>
+							<div class="home_title">Google Pixel 2 XL</div>
 							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
 							<div class="home_button trans_200"><a href="#">read more</a></div>
 						</div>
@@ -184,11 +184,35 @@
 				</div>
 				<!-- Slide -->
 				<div class="owl-item home_slider_item">
-					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider.jpg') }})"></div>
+					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider3.png') }})"></div>
 					<div class="home_slider_content text-center">
 						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
 							<div class="home_category"><a href="category">technology</a></div>
-							<div class="home_title">Building the Future</div>
+							<div class="home_title">Good Things Fall Apart</div>
+							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
+							<div class="home_button trans_200"><a href="#">read more</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- Slide -->
+				<div class="owl-item home_slider_item">
+					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider4.png') }})"></div>
+					<div class="home_slider_content text-center">
+						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+							<div class="home_category"><a href="category">technology</a></div>
+							<div class="home_title">Perfect Break</div>
+							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
+							<div class="home_button trans_200"><a href="#">read more</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- Slide -->
+				<div class="owl-item home_slider_item">
+					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider5.png') }})"></div>
+					<div class="home_slider_content text-center">
+						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+							<div class="home_category"><a href="category">technology</a></div>
+							<div class="home_title">Sign Of The Times</div>
 							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
 							<div class="home_button trans_200"><a href="#">read more</a></div>
 						</div>
