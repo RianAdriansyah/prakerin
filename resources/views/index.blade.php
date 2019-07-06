@@ -90,12 +90,12 @@
 							<!-- Navigation -->
 							<nav class="main_nav">
 								<ul class="main_nav_list d-flex flex-row align-items-center justify-content-start">
-									<li><a href="index.html">home</a></li>
+									<li><a href="/">home</a></li>
 									<li><a href="#">tech</a></li>
 									<li><a href="#">innovation</a></li>
 									<li><a href="#">videos</a></li>
-									<li><a href="#">world</a></li>
-									<li><a href="contact.html">contact</a></li>
+									<li><a href="about">about</a></li>
+									<li><a href="contact">contact</a></li>
 								</ul>
 							</nav>
 
@@ -132,12 +132,12 @@
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Home</a></li>
-				<li class="menu_mm"><a href="courses.html">Tech</a></li>
-				<li class="menu_mm"><a href="instructors.html">Innovation</a></li>
+				<li class="menu_mm"><a href="index">Home</a></li>
+				<li class="menu_mm"><a href="/">Tech</a></li>
+				<li class="menu_mm"><a href="/">Innovation</a></li>
 				<li class="menu_mm"><a href="#">Videos</a></li>
-				<li class="menu_mm"><a href="blog.html">World</a></li>
-				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				<li class="menu_mm"><a href="about">about</a></li>
+				<li class="menu_mm"><a href="contact">Contact</a></li>
 			</ul>
 		</nav>
 		<div class="menu_subscribe"><a href="#">Subscribe</a></div>
@@ -165,7 +165,7 @@
 					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider.jpg') }})"></div>
 					<div class="home_slider_content text-center">
 						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-							<div class="home_category"><a href="category.html">technology</a></div>
+							<div class="home_category"><a href="category">technology</a></div>
 							<div class="home_title">Building the Future</div>
 							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
 							<div class="home_button trans_200"><a href="#">read more</a></div>
@@ -177,7 +177,7 @@
 					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider.jpg') }})"></div>
 					<div class="home_slider_content text-center">
 						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-							<div class="home_category"><a href="category.html">technology</a></div>
+							<div class="home_category"><a href="category">technology</a></div>
 							<div class="home_title">Building the Future</div>
 							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
 							<div class="home_button trans_200"><a href="#">read more</a></div>
@@ -189,7 +189,7 @@
 					<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/home_slider.jpg') }})"></div>
 					<div class="home_slider_content text-center">
 						<div class="home_slider_content_inner" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-							<div class="home_category"><a href="category.html">technology</a></div>
+							<div class="home_category"><a href="category">technology</a></div>
 							<div class="home_title">Building the Future</div>
 							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae sapien porttitor, dignissim quam sit amet, aliquam lorem. Fusce id ligula non risus mollis consectetur</div>
 							<div class="home_button trans_200"><a href="#">read more</a></div>
@@ -214,7 +214,7 @@
 				<div class="col-md-4 intro_col">
 					<div class="intro_item">
 						<img src="{{ asset('assets/frontend/images/intro_1.jpg') }}" alt="">
-						<div class="intro_content trans_200"><a href="category.html">technology</a></div>
+						<div class="intro_content trans_200"><a href="category">technology</a></div>
 					</div>
 				</div>
 
@@ -222,7 +222,7 @@
 				<div class="col-md-4 intro_col">
 					<div class="intro_item">
 						<img src="{{ asset('assets/frontend/images/intro_2.jpg') }}" alt="">
-						<div class="intro_content trans_200"><a href="category.html">videos</a></div>
+						<div class="intro_content trans_200"><a href="category">videos</a></div>
 					</div>
 				</div>
 
@@ -230,7 +230,7 @@
 				<div class="col-md-4 intro_col">
 					<div class="intro_item">
 						<img src="{{ asset('assets/frontend/images/intro_3.jpg') }}" alt="">
-						<div class="intro_content trans_200"><a href="category.html">featured</a></div>
+						<div class="intro_content trans_200"><a href="category">featured</a></div>
 					</div>
 				</div>
 
@@ -277,8 +277,8 @@
 									<div class="post_item post_v_large d-flex flex-column align-items-start justify-content-start">
 										<div class="post_image"><img src="{{ asset('assets/frontend/images/post_1.jpg') }}" alt="https://unsplash.com/@cgower"></div>
 										<div class="post_content">
-											<div class="post_category cat_technology"><a href="category.html">technology</a></div>
-											<div class="post_title"><a href="single.html">The new Apple release ceremony</a></div>
+											<div class="post_category cat_technology"><a href="category">technology</a></div>
+											<div class="post_title"><a href="single">The new Apple release ceremony</a></div>
 											<div class="post_info d-flex flex-row align-items-center justify-content-start">
 												<div class="post_author d-flex flex-row align-items-center justify-content-start">
 													<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -299,8 +299,8 @@
 									<div class="post_item post_v_small d-flex flex-column align-items-start justify-content-start">
 										<div class="post_image"><img src="{{ asset('assets/frontend/images/post_2.jpg') }}" alt="https://unsplash.com/@lloydaleveque"></div>
 										<div class="post_content">
-											<div class="post_category cat_world"><a href="category.html">world</a></div>
-											<div class="post_title"><a href="single.html">The devices of the future</a></div>
+											<div class="post_category cat_world"><a href="category">world</a></div>
+											<div class="post_title"><a href="single">The devices of the future</a></div>
 											<div class="post_info d-flex flex-row align-items-center justify-content-start">
 												<div class="post_author d-flex flex-row align-items-center justify-content-start">
 													<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -315,8 +315,8 @@
 									<div class="post_item post_v_small d-flex flex-column align-items-start justify-content-start">
 										<div class="post_image"><img src="{{ asset('assets/frontend/images/post_3.jpg') }}" alt="https://unsplash.com/@agkdesign"></div>
 										<div class="post_content">
-											<div class="post_category cat_world"><a href="category.html">world</a></div>
-											<div class="post_title"><a href="single.html">The devices of the future</a></div>
+											<div class="post_category cat_world"><a href="category">world</a></div>
+											<div class="post_title"><a href="single">The devices of the future</a></div>
 											<div class="post_info d-flex flex-row align-items-center justify-content-start">
 												<div class="post_author d-flex flex-row align-items-center justify-content-start">
 													<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -351,8 +351,8 @@
 										</div>
 										<div class="col-lg-7">
 											<div class="post_content">
-												<div class="post_category cat_technology"><a href="category.html">technology</a></div>
-												<div class="post_title"><a href="single.html">The new Apple release ceremony</a></div>
+												<div class="post_category cat_technology"><a href="category">technology</a></div>
+												<div class="post_title"><a href="single">The new Apple release ceremony</a></div>
 												<div class="post_info d-flex flex-row align-items-center justify-content-start">
 													<div class="post_author d-flex flex-row align-items-center justify-content-start">
 														<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -377,8 +377,8 @@
 										</div>
 										<div class="col-lg-7">
 											<div class="post_content">
-												<div class="post_category cat_world"><a href="category.html">world</a></div>
-												<div class="post_title"><a href="single.html">The new Apple release ceremony</a></div>
+												<div class="post_category cat_world"><a href="category">world</a></div>
+												<div class="post_title"><a href="single">The new Apple release ceremony</a></div>
 												<div class="post_info d-flex flex-row align-items-center justify-content-start">
 													<div class="post_author d-flex flex-row align-items-center justify-content-start">
 														<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -403,8 +403,8 @@
 										</div>
 										<div class="col-lg-7">
 											<div class="post_content">
-												<div class="post_category cat_world"><a href="category.html">world</a></div>
-												<div class="post_title"><a href="single.html">New HTML5 Codes - Freebies</a></div>
+												<div class="post_category cat_world"><a href="category">world</a></div>
+												<div class="post_title"><a href="single">New HTML5 Codes - Freebies</a></div>
 												<div class="post_info d-flex flex-row align-items-center justify-content-start">
 													<div class="post_author d-flex flex-row align-items-center justify-content-start">
 														<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -443,8 +443,8 @@
 											<div class="post_item post_v_med d-flex flex-column align-items-start justify-content-start">
 												<div class="post_image"><img src="{{ asset('assets/frontend/images/post_4.jpg') }}" alt="https://unsplash.com/@oria_hector"></div>
 												<div class="post_content">
-													<div class="post_category cat_technology"><a href="category.html">technology</a></div>
-													<div class="post_title"><a href="single.html">Keep up with the tech</a></div>
+													<div class="post_category cat_technology"><a href="category">technology</a></div>
+													<div class="post_title"><a href="single">Keep up with the tech</a></div>
 													<div class="post_info d-flex flex-row align-items-center justify-content-start">
 														<div class="post_author d-flex flex-row align-items-center justify-content-start">
 															<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -465,8 +465,8 @@
 											<div class="post_item post_v_med d-flex flex-column align-items-start justify-content-start">
 												<div class="post_image"><img src="{{ asset('assets/frontend/images/post_5.jpg') }}" alt="https://unsplash.com/@mattyfours"></div>
 												<div class="post_content">
-													<div class="post_category cat_technology"><a href="category.html">technology</a></div>
-													<div class="post_title"><a href="single.html">Keep up with the tech</a></div>
+													<div class="post_category cat_technology"><a href="category">technology</a></div>
+													<div class="post_title"><a href="single">Keep up with the tech</a></div>
 													<div class="post_info d-flex flex-row align-items-center justify-content-start">
 														<div class="post_author d-flex flex-row align-items-center justify-content-start">
 															<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
@@ -532,8 +532,8 @@
 								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
 									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_1.jpg') }}" alt="https://unsplash.com/@anniespratt"></div></div>
 									<div class="latest_post_content">
-										<div class="post_category_small cat_video"><a href="category.html">video</a></div>
-										<div class="latest_post_title"><a href="single.html">New tech development</a></div>
+										<div class="post_category_small cat_video"><a href="category">video</a></div>
+										<div class="latest_post_title"><a href="single">New tech development</a></div>
 										<div class="latest_post_date">March 12, 2018</div>
 									</div>
 								</div>
@@ -542,8 +542,8 @@
 								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
 									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_2.jpg') }}" alt="https://unsplash.com/@agkdesign"></div></div>
 									<div class="latest_post_content">
-										<div class="post_category_small cat_world"><a href="category.html">world</a></div>
-										<div class="latest_post_title"><a href="single.html">New tech development</a></div>
+										<div class="post_category_small cat_world"><a href="category">world</a></div>
+										<div class="latest_post_title"><a href="single">New tech development</a></div>
 										<div class="latest_post_date">March 12, 2018</div>
 									</div>
 								</div>
@@ -552,8 +552,8 @@
 								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
 									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_3.jpg') }}" alt="https://unsplash.com/@mfgonz"></div></div>
 									<div class="latest_post_content">
-										<div class="post_category_small cat_technology"><a href="category.html">tech</a></div>
-										<div class="latest_post_title"><a href="single.html">New tech development</a></div>
+										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
+										<div class="latest_post_title"><a href="single">New tech development</a></div>
 										<div class="latest_post_date">March 12, 2018</div>
 									</div>
 								</div>
@@ -562,8 +562,8 @@
 								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
 									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_4.jpg') }}" alt="https://unsplash.com/@juja_han"></div></div>
 									<div class="latest_post_content">
-										<div class="post_category_small cat_technology"><a href="category.html">tech</a></div>
-										<div class="latest_post_title"><a href="single.html">New tech development</a></div>
+										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
+										<div class="latest_post_title"><a href="single">New tech development</a></div>
 										<div class="latest_post_date">March 12, 2018</div>
 									</div>
 								</div>
@@ -581,8 +581,8 @@
 								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
 									<div><div class="most_viewed_num">01.</div></div>
 									<div class="most_viewed_content">
-										<div class="post_category_small cat_video"><a href="category.html">video</a></div>
-										<div class="most_viewed_title"><a href="single.html">New tech development</a></div>
+										<div class="post_category_small cat_video"><a href="category">video</a></div>
+										<div class="most_viewed_title"><a href="single">New tech development</a></div>
 										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
 									</div>
 								</div>
@@ -591,8 +591,8 @@
 								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
 									<div><div class="most_viewed_num">02.</div></div>
 									<div class="most_viewed_content">
-										<div class="post_category_small cat_world"><a href="category.html">world</a></div>
-										<div class="most_viewed_title"><a href="single.html">Robots are taking over</a></div>
+										<div class="post_category_small cat_world"><a href="category">world</a></div>
+										<div class="most_viewed_title"><a href="single">Robots are taking over</a></div>
 										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
 									</div>
 								</div>
@@ -601,8 +601,8 @@
 								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
 									<div><div class="most_viewed_num">03.</div></div>
 									<div class="most_viewed_content">
-										<div class="post_category_small cat_technology"><a href="category.html">tech</a></div>
-										<div class="most_viewed_title"><a href="single.html">10 tips to tech world</a></div>
+										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
+										<div class="most_viewed_title"><a href="single">10 tips to tech world</a></div>
 										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
 									</div>
 								</div>
@@ -615,14 +615,14 @@
 						<div class="tags">
 							<div class="sidebar_title">Tags</div>
 							<div class="tags_content d-flex flex-row align-items-start justify-content-start flex-wrap">
-								<div class="tag cat_technology"><a href="category.html">technology</a></div>
-								<div class="tag"><a href="category.html">design</a></div>
-								<div class="tag"><a href="category.html">travel</a></div>
-								<div class="tag cat_video"><a href="category.html">video</a></div>
-								<div class="tag cat_party"><a href="category.html">party</a></div>
-								<div class="tag"><a href="category.html">music</a></div>
-								<div class="tag cat_world"><a href="category.html">world</a></div>
-								<div class="tag"><a href="category.html">adventure</a></div>
+								<div class="tag cat_technology"><a href="category">technology</a></div>
+								<div class="tag"><a href="category">design</a></div>
+								<div class="tag"><a href="category">travel</a></div>
+								<div class="tag cat_video"><a href="category">video</a></div>
+								<div class="tag cat_party"><a href="category">party</a></div>
+								<div class="tag"><a href="category">music</a></div>
+								<div class="tag cat_world"><a href="category">world</a></div>
+								<div class="tag"><a href="category">adventure</a></div>
 							</div>
 						</div>
 
@@ -682,12 +682,12 @@
 						<div class="footer_nav_container text-center">
 							<nav class="footer_nav">
 								<ul class="footer_nav_list d-flex flex-md-row flex-column align-items-center justify-content-start">
-									<li><a href="index.html">home</a></li>
+									<li><a href="/">home</a></li>
 									<li><a href="#">tech</a></li>
 									<li><a href="#">innovation</a></li>
 									<li><a href="#">videos</a></li>
-									<li><a href="#">world</a></li>
-									<li><a href="contact.html">contact</a></li>
+									<li><a href="about">about</a></li>
+									<li><a href="contact">contact</a></li>
 								</ul>
 							</nav>
 						</div>
