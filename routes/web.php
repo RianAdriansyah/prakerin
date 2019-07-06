@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/prakerin', function () {
+Route::get('/', function () {
     return view('index');
 });
 
