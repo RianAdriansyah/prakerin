@@ -35,10 +35,17 @@ Route::get('/category', function () {
     return view('category');
 });
 
-Route::get('/admin', function () {
-    return view('backend/index');
+Route::get('/backend/artikel', function () {
+    return view('backend/artikel/index');
 });
 
+Route::get('/backend/tag', function () {
+    return view('backend/tag/index');
+});
+
+Route::get('/backend/kategori', function () {
+    return view('backend/kategori/index');
+});
 
 Auth::routes();
 
@@ -47,3 +54,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('artikel', 'ArtikelController');
+Route::resource('tag', 'TagController');
+Route::resource('kategori', 'KategoriController');
