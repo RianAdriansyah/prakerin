@@ -7,7 +7,7 @@
             @csrf
             <div class="form-group">
               <label for="">Judul Artikel</label>
-              <input type="text" name="nama" id="" class="form-control" aria-describedby="helpId">
+              <input type="text" name="judul" id="" class="form-control" aria-describedby="helpId">
             </div>
             <div class="form-group">
               <label for="">Konten</label>
@@ -18,11 +18,11 @@
               <input type="file" name="foto" id="foto" class="form-control">
             </div>
             <div class="form-group">
-                <label for="kategori"></label>
-                <select name="kategori" class="form-control">
-                <option value="">-- Pilih --</option>
-                <option value="SMK">SMK</option>
-                <option value="SMA">SMA</option>
+              <label for="">Nama kategori</label>
+                <select name="kategori_id" class="form-control">
+                  @foreach($cat as $data)
+                    <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
+                  @endforeach
                 </select>
             </div>
             <button type="submit" name="Simpan"class="btn btn-outline-success">Simpan</button>

@@ -140,37 +140,60 @@
 		</div><!--/.row-->
 		
 		<div class="container">
-      <div class="row">
-        <div class="col col-lg-10">
-		<center>
-			<a href="{{ route('artikel.create') }}" class="btn btn-primary">Tambah Data</a>
-		</center>
-        <table class="table table-borderless table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th colspan="3" class="text-center">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td><a href="" class="btn btn-success">Edit</a></td>
-	  <td><a href="" class="btn btn-primary">Show</a></td>
-	  <td><a href="" class="btn btn-danger">Delete</a></td>
-    </tr>
-
-  </tbody>
-</table>
-
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-dark">
+                <div class="card-header border-dark">Data Artikel</div>
+                    <div class="card-body">
+                        <center>
+                            <a href="{{ route('artikel.create') }}" 
+                            class="btn btn-primary">Tambah</a>
+                        </center>
+                        <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Judul Artikel</th>
+                                        <th scope="col">Foto</th>
+                                        <th scope="col">Konten</th>
+                                        <th scope="col">Kategori</th>
+                                        <th scope="col">Slug</th>
+                                        <th colspan="2" class="text-center">Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    @php $no = 1; @endphp
+                                    @foreach($artikel as $data)
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $data->judul }}</td>
+                                        <td>{{ $data->konten }}</td>
+                                        <td><img src="{{ $data->foto }}""></td>
+                                        <td>{{ $data->kategori->nama_kategori}}</td>
+										<td>{{ $data->slug }}</td>
+                                        <td>
+                                            <a href="{{ route('artikel.edit',$data->id) }}" 
+                                            class="btn btn-sm btn-success">Edit Data</a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('artikel.destroy',$data->id) }}" method="post">
+                                            {{csrf_field()}}
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button class="btn btn-sm btn-danger" type="submit">
+                                                    Hapus Data
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                        </div>
+                    </div>
+            </div>
         </div>
-      </div>
+    </div>              
+</div>
 			</div><!--/.col-->
 			<div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>

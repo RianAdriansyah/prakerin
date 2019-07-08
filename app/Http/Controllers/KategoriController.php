@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Kategori;
+
 class KategoriController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $cat = Kategori::all();
+
+        return view('backend.kategori.index', compact('cat'));
     }
 
     /**
@@ -23,7 +27,9 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        $cat = Kategori::all();
+
+        return view('backend.kategori.create', compact('cat'));
     }
 
     /**
@@ -34,7 +40,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cat = new Kategori;
+
+        $cat->nama_kategori = $request->nama_kategori;
+        $cat->slug = str_slug($request->nama_kategori);
+        $cat->save();
+
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -56,7 +68,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat = Kategori::findOrFail($id);
+
+        return view('backend.kategori.edit', compact('cat'));
     }
 
     /**
@@ -68,7 +82,13 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cat = Kategori::findOrFail($id);
+
+        $cat->nama_kategori = $request->nama_kategori;
+        $cat->slug = str_slug($request->nama_kategori);
+        $cat->save();
+
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -79,6 +99,10 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cat = Kategori::findOrFail($id);
+        $cat->nama_kategori;
+        $cat->delete();
+
+        return redirect()->route('kategori.index');
     }
 }

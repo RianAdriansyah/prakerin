@@ -7,6 +7,10 @@ use Session;
 use App\Artikel;
 use App\Kategori;
 use App\Tag;
+use User;
+use Illuminate\Support\Facades\File;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Auth;
 
 class ArtikelController extends Controller
 {
@@ -44,7 +48,24 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
+        $artikel = new Artikel;
+        $artikel->judul = $request->judul;
+        $artikel->slug = str_slug($request->judul);
+        $artikel->konten = $request->konten;
+        $artikel->user_id = Auth::user()->id;
+        $artikel->kategori_id = $request->kategori_id;
+        # Foto
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $path = public_path().'/assets/img/artikel/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $upload = $file->move($path, $filename);
+            $artikel->foto = $filename;
+        }
+        $artikel->save();
+        $artikel->tag()->attach($request->tag);
         
+        return redirect()->route('artikel.index');
     }
 
     /**
@@ -83,7 +104,33 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+        $artikel->judul = $request->judul;
+        $artikel->slug = str_slug($request->judul);
+        $artikel->konten = $request->konten;
+        $artikel->kategori_id = $request->kategori;
+        # Foto
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $path = public_path().'/assets/img/artikel/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $upload = $file->move($path, $filename);
+
+            if($artikel->foto){
+                $old_foto = $artikel->foto;
+                $filepath = public_path().'/assets/img/artikel/'.$artikel->foto;
+                try {
+                    File::delete($filepath);
+                } catch (FileNotFoundException $e) {
+                    //Exception $e;
+                }
+            }
+            $artikel->foto = $filename;
+        }
+        $artikel->save();
+        $artikel->tag()->sync($request->tag);
+        
+        return redirect()->route('artikel.index');
     }
 
     /**
@@ -94,6 +141,20 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+        if($artikel->foto){
+            $old_foto = $artikel->foto;
+            $filepath = public_path().'/assets/img/artikel/'.$artikel->foto;
+            try {
+                File::delete($filepath);
+            } catch (FileNotFoundException $e) {
+                //Exception $e;
+            }
+        }
+
+        $artikel->tag()->detach($artikel->id);
+        $artikel->delete();
+        
+        return redirect()->route('artikel.index');
     }
 }

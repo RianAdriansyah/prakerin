@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
 
 class TagController extends Controller
 {
@@ -13,7 +14,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tag = Tag::all();
+
+        return view('backend.tag.index', compact('tag'));
     }
 
     /**
@@ -23,7 +26,9 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        $tag = Tag::all();
+
+        return view('backend.tag.create', compact('tag'));
     }
 
     /**
@@ -34,7 +39,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tag = new Tag;
+
+        $tag->nama_tag = $request->nama_tag;
+        $tag->slug = str_slug($request->nama_tag);
+        $tag->save();
+
+        return redirect()->route('tag.index');
     }
 
     /**
@@ -56,7 +67,9 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+
+        return view('backend.tag.edit', compact('tag'));
     }
 
     /**
@@ -68,7 +81,13 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+
+        $tag->nama_tag = $request->nama_tag;
+        $tag->slug = str_slug($request->nama_tag);
+        $tag->save();
+
+        return redirect()->route('tag.index');
     }
 
     /**
@@ -79,6 +98,10 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->nana_tag;
+        $tag->delete();
+
+        return redirect()->route('tag.index');
     }
 }
