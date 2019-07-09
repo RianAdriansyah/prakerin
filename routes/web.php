@@ -47,6 +47,10 @@ Route::get('/backend/kategori', function () {
     return view('backend/kategori/index');
 });
 
+Route::get('/siswa', function () {
+    return view('siswa');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -17,8 +17,8 @@ class SiswaController extends Controller
         $siswa = Siswa::all();
         $response = [
             'success' => true,
-            'data' => $siswa,
-            'message' => 'Berhasil'
+            'data' =>  $siswa,
+            'message' => 'Berhasil ditampilkan.'
         ];
         return response()->json($response, 200);
     }
@@ -75,19 +75,29 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        $siswa =new Siswa();
-        $siswa->nama = $request->nama;
-        $siswa->sekolah = $request->sekolah;
-        $siswa->kelas = $request->kelas;
-        $siswa->alamat = $request->alamat;
-        $siswa->guru = $request->guru;
+        $siswa = new Siswa();
+        $siswa->nama = $request->namasiswa;
         $siswa->save();
         $response = [
             'success' => true,
-            'data' => $siswa,
-            'message' => 'Berhasil'
+            'data' =>  $siswa,
+            'message' => 'Berhasil ditambahkan.'
         ];
         return response()->json($response, 200);
+
+        // $siswa =new Siswa();
+        // $siswa->nama = $request->nama;
+        // $siswa->sekolah = $request->sekolah;
+        // $siswa->kelas = $request->kelas;
+        // $siswa->alamat = $request->alamat;
+        // $siswa->guru = $request->guru;
+        // $siswa->save();
+        // $response = [
+        //     'success' => true,
+        //     'data' => $siswa,
+        //     'message' => 'Berhasil'
+        // ];
+        // return response()->json($response, 200);
     }
 
     /**
@@ -150,11 +160,11 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        $siswa = Siswa::findOrFail($id)->delete();
+        $siswa = Siswa::find($id)->delete($id);
         $response = [
             'success' => true,
-            'data' => $siswa,
-            'message' => 'Berhasil'
+            'data' =>  $siswa,
+            'message' => 'Berhasil dihapus.'
         ];
         return response()->json($response, 200);
     }

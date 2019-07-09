@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Siswa extends Model
 {
     protected $fillable = [
-        'nama','sekolah','kelas','alamat','guru'
+        'nama'
     ];
     
     public $timestamps = true;
