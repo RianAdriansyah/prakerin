@@ -103,7 +103,7 @@ class TagController extends Controller
     public function destroy($id)
     {
         $tag = Tag::findOrFail($id);
-        $tag->nana_tag;
+        $tag->nama_tag;
         $tag->delete();
 
         return redirect()->route('tag.index');
