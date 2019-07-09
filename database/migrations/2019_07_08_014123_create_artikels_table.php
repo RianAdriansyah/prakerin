@@ -21,10 +21,10 @@ class CreateArtikelsTable extends Migration
             $table->string('foto');
             $table->string('slug');
             $table->integer('kategori_id')->unsigned();
-            // $table->integer('user_id')->unsigned();
+            
 
-            $table->foreign('kategori_id')->references('id')->on('kategoris');
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

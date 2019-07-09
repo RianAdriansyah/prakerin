@@ -14,6 +14,11 @@ use Auth;
 
 class ArtikelController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +26,9 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::orderBy('created_at', 'desc');
-        $count = Artikel::all();
+       $artikel = Artikel::all();
 
-        return view('backend.artikel.index', compact('artikel', 'count'));
+        return view('backend.artikel.index', compact('artikel'));
     }
 
     /**
@@ -108,7 +112,8 @@ class ArtikelController extends Controller
         $artikel->judul = $request->judul;
         $artikel->slug = str_slug($request->judul);
         $artikel->konten = $request->konten;
-        $artikel->kategori_id = $request->kategori;
+        $artikel->user_id = Auth::user()->id;
+        $artikel->kategori_id = $request->kategori_id;
         # Foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');

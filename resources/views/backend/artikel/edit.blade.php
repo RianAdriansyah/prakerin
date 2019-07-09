@@ -2,15 +2,17 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('artikel.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PATCH">
+
             @csrf
             <div class="form-group">
               <label for="">Judul Artikel</label>
-              <input type="text" name="nama" id="" class="form-control" aria-describedby="helpId">
+              <input type="text" name="judul" id="" class="form-control" aria-describedby="helpId" value="{{$artikel->judul}}">
             </div>
             <div class="form-group">
               <label for="">Konten</label>
-              <textarea name="konten" id="konten" cols="30" rows="5" class="form-control"></textarea>
+              <textarea name="konten" id="konten" cols="30" rows="5" class="form-control">{{$artikel->konten}}</textarea>
             </div>
             <div class="form-group">
               <label for="">Foto</label>
@@ -18,10 +20,10 @@
             </div>
             <div class="form-group">
                 <label for="kategori"></label>
-                <select name="kategori" class="form-control">
-                <option value="">-- Pilih --</option>
-                <option value="SMK">SMK</option>
-                <option value="SMA">SMA</option>
+                <select name="kategori_id" class="form-control">
+                @foreach($cat as $data)
+                  <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
+                @endforeach
                 </select>
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>

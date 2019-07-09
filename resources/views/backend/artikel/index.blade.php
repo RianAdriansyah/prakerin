@@ -168,8 +168,8 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $data->judul }}</td>
+                                        <td><img  src="{{ asset('assets/img/artikel/'.$data->foto)}}" width="15%"></td>
                                         <td>{{ $data->konten }}</td>
-                                        <td><img src="{{ $data->foto }}""></td>
                                         <td>{{ $data->kategori->nama_kategori}}</td>
 										<td>{{ $data->slug }}</td>
                                         <td>
