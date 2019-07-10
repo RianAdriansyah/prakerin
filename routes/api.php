@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+// use Symfony\Component\Routing\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('/siswa', 'SiswaController');
-Route::resource('/guru', 'GuruController');
+Route::group(['middleware' => 'cors'],function(){
+    Route::resource('artikel', 'ArtikelAjax');
+    Route::resource('/kategori', 'KategoriAjax');
+    Route::resource('/tag', 'TagAjax');
+    
+    Route::resource('/siswa', 'SiswaController');
+    Route::resource('/guru', 'GuruController');
+});
+
 Route::get('/contoh2', 'SiswaController@hobi');
 Route::get('/contoh3', 'SiswaController@jurusan');
 Route::get('/contoh4', 'SiswaController@kelas');

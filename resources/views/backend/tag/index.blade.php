@@ -99,8 +99,8 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="../artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
-			<li><a href="../kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
+			<li><a href="artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
+			<li><a href="kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
 			<li class="active"><a href="#"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<!-- <li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>

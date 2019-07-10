@@ -28,8 +28,6 @@
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
             <a name="" id="" class="btn btn-outline-secondary" href="{{route('artikel.index')}}" role="button">Kembali</a>
-
-            
         </form>
     </div>
 @endsection

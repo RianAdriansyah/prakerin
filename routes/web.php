@@ -35,22 +35,20 @@ Route::get('/category', function () {
     return view('category');
 });
 
-Route::get('/backend/artikel', function () {
-    return view('backend/artikel/index');
-});
-
-Route::get('/backend/tag', function () {
-    return view('backend/tag/index');
-});
-
-Route::get('/backend/kategori', function () {
-    return view('backend/kategori/index');
-});
 
 Route::get('/siswa', function () {
     return view('siswa');
 });
 
+Route::get('/ajax/kategori', function () {
+    return view('backend/ajax/kategori/index');
+});
+
+Route::get('/ajax/tag', function () {
+    return view('backend/ajax/tag/index');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -59,6 +57,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('artikel', 'ArtikelController');
-Route::resource('tag', 'TagController');
-Route::resource('kategori', 'KategoriController');
+// Route::resource('artikel', 'ArtikelController');
+// Route::resource('tag', 'TagController');
+// Route::resource('kategori', 'KategoriAjax');
+
+Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
+    Route::resource('/artikel', 'ArtikelController');
+    Route::resource('/kategori', 'KategoriController');
+    Route::resource('/tag', 'TagController');
+});
+

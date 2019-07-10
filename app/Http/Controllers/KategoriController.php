@@ -8,10 +8,7 @@ use App\Kategori;
 
 class KategoriController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +19,7 @@ class KategoriController extends Controller
         $cat = Kategori::all();
 
         return view('backend.kategori.index', compact('cat'));
+
     }
 
     /**

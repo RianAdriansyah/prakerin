@@ -100,8 +100,8 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
-			<li><a href="../kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
-			<li><a href="../tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
+			<li><a href="kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
+			<li><a href="tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
@@ -172,6 +172,13 @@
                                         <td>{{ $data->konten }}</td>
                                         <td>{{ $data->kategori->nama_kategori}}</td>
 										<td>{{ $data->slug }}</td>
+										<td>
+                                            <ol>
+                                                @foreach($data->tag as $isi)
+                                                    <li>{{ $isi->nama_tag }}</li>
+                                                @endforeach
+                                            </ol>
+                                        </td>
                                         <td>
                                             <a href="{{ route('artikel.edit',$data->id) }}" 
                                             class="btn btn-sm btn-success">Edit Data</a>

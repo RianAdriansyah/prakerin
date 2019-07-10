@@ -99,9 +99,9 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="../artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
+			<li><a href="artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
 			<li class="active"><a href="#"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
-			<li><a href="../tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
+			<li><a href="tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
@@ -166,9 +166,12 @@
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $data->nama_kategori }}</td>
                                         <td>{{ $data->slug }}</td>
-                                        
                                         <td>
                                             <a href="{{ route('kategori.edit',$data->id) }}" 
+                                            class="btn btn-sm btn-success">Edit Data</a>
+                                        </td>
+										<td>
+                                            <a href="{{ route('tag.edit',$data->id) }}" 
                                             class="btn btn-sm btn-success">Edit Data</a>
                                         </td>
                                         <td>
@@ -204,6 +207,10 @@
 	<script src="{{ asset('assets/backend/js/easypiechart-data.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/bootstrap-datepicker.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/custom.js') }}"></script>
+	<script src="{{ asset('assets/backend/ckeditor/ckeditor.js') }}"></script>
+	<script>
+    CKEDITOR.replace( 'ckeditor' );
+	</script>
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
