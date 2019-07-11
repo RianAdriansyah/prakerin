@@ -48,6 +48,10 @@ Route::get('/ajax/tag', function () {
     return view('backend/ajax/tag/index');
 });
 
+Route::get('/ajax/artikel', function () {
+    return view('backend/ajax/artikel/index');
+});
+
 
 Auth::routes();
 

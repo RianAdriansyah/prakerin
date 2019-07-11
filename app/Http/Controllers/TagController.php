@@ -56,7 +56,9 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+
+        return view('backend.tag.show', compact('tag'));
     }
 
     /**

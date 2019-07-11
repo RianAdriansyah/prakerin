@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'cors'],function(){
-    Route::resource('artikel', 'ArtikelAjax');
+    Route::resource('/artikel', 'ArtikelAjax');
     Route::resource('/kategori', 'KategoriAjax');
     Route::resource('/tag', 'TagAjax');
     

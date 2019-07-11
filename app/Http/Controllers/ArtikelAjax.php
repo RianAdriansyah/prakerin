@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Artikel;
+use App\Tag;
 use App\Kategori;
 
-class KategoriAjax extends Controller
+class ArtikelAjax extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +16,10 @@ class KategoriAjax extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::all();
+        $artikel = Artikel::all();
            $response = [
                 'success' => true,
-                'data' =>  $kategori,
+                'data' =>  $artikel,
                 'message' => 'Berhasil!'
             ]; 
         return response()->json($response, 200);
@@ -30,7 +32,7 @@ class KategoriAjax extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -41,16 +43,7 @@ class KategoriAjax extends Controller
      */
     public function store(Request $request)
     {
-        $kategori = new Kategori();
-        $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->slug = str_slug($request->nama_kategori, '-');
-        $kategori->save();
-        $response = [
-            'success' => true,
-            'data' => $kategori,
-            'message' => 'Berhasil Ditambahkan!'
-        ];
-        return response()->json($response, 200);
+        //
     }
 
     /**
@@ -84,17 +77,7 @@ class KategoriAjax extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $kategori = Kategori::findOrFail($id);
-        $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->slug = str_slug($request->nama_kategori, '-');
-        $kategori->save();
-        $response = [
-            'success' => true,
-            'data' => $kategori,
-            'message' => 'Berhasil Dirubah!'
-        ];
-        return response()->json($response, 200);
+        //
     }
 
     /**
@@ -105,12 +88,6 @@ class KategoriAjax extends Controller
      */
     public function destroy($id)
     {
-        $kategori = Kategori::findOrFail($id)->delete();
-        $response = [
-            'success' => true,
-            'data' =>  $kategori,
-            'message' => 'Berhasil Dihapus!'
-        ];
-    return response()->json($response, 200);
+        //
     }
 }

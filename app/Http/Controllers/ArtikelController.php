@@ -76,7 +76,13 @@ class ArtikelController extends Controller
      */
     public function show($id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+        $kategori = Kategori::all();
+        $tag = Tag::all();
+        $selected = $artikel->tag->pluck('id')->toArray();
+
+
+        return view('backend.artikel.show', compact('selected', 'artikel', 'tag', 'kategori'));
     }
 
     /**

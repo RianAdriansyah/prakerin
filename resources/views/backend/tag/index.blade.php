@@ -99,10 +99,10 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
-			<li><a href="kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
+			<li><a href="{{ route('artikel.index') }}"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
+			<li><a href="{{ route('kategori.index') }}"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
 			<li class="active"><a href="#"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
-			<li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
+			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
 			<!-- <li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
@@ -157,7 +157,7 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Nama Tag</th>
                                         <th scope="col">Slug</th>
-                                        <th colspan="2" class="text-center">Aksi</th>
+                                        <th colspan="3" class="text-center">Aksi</th>
                                     </tr>
                                     </thead>
                                     @php $no = 1; @endphp
@@ -170,6 +170,10 @@
                                         <td>
                                             <a href="{{ route('tag.edit',$data->id) }}" 
                                             class="btn btn-sm btn-success">Edit Data</a>
+										</td>
+										<td>
+                                            <a href="{{ route('tag.show',$data->id) }}" 
+                                            class="btn btn-sm btn-primary">Show Data</a>
                                         </td>
                                         <td>
                                             <form action="{{ route('tag.destroy',$data->id) }}" method="post">

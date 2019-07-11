@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Data Kategori</title>
+	<title>Data Artikel</title>
 	<link href="{{ asset('assets/backend/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/datepicker3.css') }}" rel="stylesheet">
@@ -99,8 +99,8 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="{{ route('artikel.index') }}"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
-			<li class="active"><a href="#"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
+			<li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
+			<li><a href="{{ route('kategori.index') }}"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
 			<li><a href="{{ route('tag.index') }}"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
@@ -129,14 +129,14 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Backend</li>
-				<li class="active">Kategori</li>
+				<li class="active">Ajax</li>
+				<li class="active">Artikel</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Data Kategori</h1>
+				<h1 class="page-header">Data Artikel</h1>
 			</div>
 		</div><!--/.row-->
 		
@@ -146,45 +146,27 @@
             <div class="card border-dark">
                     <div class="card-body">
                         <center>
-                            <a href="{{ route('kategori.create') }}" 
+                            <a href="{{ route('artikel.create') }}" 
                             class="btn btn-primary">Tambah</a>
                         </center>
                         <br>
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-striped text-center">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Nama Kategori</th>
-                                        <th scope="col">Slug</th>
-                                        <th colspan="3" class="text-center">Aksi</th>
+                                        <th scope="col">Judul Artikel</th>
+                                        <th scope="col">Foto</th>
+										<th scope="col">Slug</th>
+                                        <th scope="col">Konten</th>
+                                        <th scope="col">Kategori</th>
+										<th scope="col">Tag</th>
+                                        <th colspan="2" class="text-center">Aksi</th>
                                     </tr>
                                     </thead>
-                                    @php $no = 1; @endphp
-                                    @foreach($cat as $data)
-                                    <tr>
-                                        <td>{{ $no++ }}</td>
-                                        <td>{{ $data->nama_kategori }}</td>
-                                        <td>{{ $data->slug }}</td>
-                                        <td>
-                                            <a href="{{ route('kategori.edit',$data->id) }}" 
-                                            class="btn btn-sm btn-success">Edit Data</a>
-                                        </td>
-										<td>
-                                            <a href="{{ route('kategori.show',$data->id) }}" 
-                                            class="btn btn-sm btn-primary">Show Data</a>
-                                        </td>
-                                        <td>
-                                            <form action="{{ route('kategori.destroy',$data->id) }}" method="post">
-                                            {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button class="btn btn-sm btn-danger" type="submit">
-                                                    Hapus Data
-                                                </button>
+                                        <tbody class="data-artikel"></tbody>
                                             </form>
                                         </td>
                                     </tr>
-                                    @endforeach
                                 </table>
                         </div>
                     </div>
@@ -200,17 +182,14 @@
 	</div>	<!--/.main-->
 	
 	<script src="{{ asset('assets/backend/js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ asset('js/artikel.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/chart.min.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/chart-data.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/easypiechart.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/easypiechart-data.js') }}"></script>
 	<script src="{{ asset('assets/backend/js/bootstrap-datepicker.js') }}"></script>
-	<script src="{{ asset('assets/backend/js/custom.js') }}"></script>
-	<script src="{{ asset('assets/backend/ckeditor/ckeditor.js') }}"></script>
-	<script>
-    CKEDITOR.replace( 'ckeditor' );
-	</script>
+    <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");

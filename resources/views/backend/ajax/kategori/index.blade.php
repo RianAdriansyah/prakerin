@@ -99,9 +99,9 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="../artikel/"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
+			<li><a href="{{ route('artikel.index') }}"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
 			<li><a href="#"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
-			<li><a href="../tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
+			<li><a href="{{ route('tag.index') }}"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">

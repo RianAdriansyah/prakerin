@@ -12,7 +12,7 @@
             </div>
             <div class="form-group">
               <label for="">Konten</label>
-              <textarea name="konten" id="konten" cols="30" rows="5" class="form-control">{{$artikel->konten}}</textarea>
+              <textarea name="konten" id="konten" cols="30" rows="5" class="form-control ckeditor">{{$artikel->konten}}</textarea>
             </div>
             <div class="form-group">
               <label for="">Foto</label>
@@ -24,6 +24,15 @@
                 @foreach($cat as $data)
                   <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
                 @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="">Tag</label>
+                <select name="tag[]" class="form-control multiple" value ="$data->nama_tag" multiple>
+                  @foreach($tag as $data)
+                    <option value="{{ $data->id }}">
+                      {{ $data->nama_tag }}</option>
+                        @endforeach
                 </select>
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>

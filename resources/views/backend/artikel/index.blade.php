@@ -100,8 +100,8 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
-			<li><a href="kategori/"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
-			<li><a href="tag/"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
+			<li><a href="{{ route('kategori.index') }}"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
+			<li><a href="{{ route('tag.index') }}"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
 			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
@@ -154,22 +154,25 @@
                                 <table class="table table-striped text-center">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">No</th>
+										<th scope="col">No</th>
+										<th scope="col">Penulis</th>
                                         <th scope="col">Judul Artikel</th>
                                         <th scope="col">Foto</th>
                                         <th scope="col">Konten</th>
                                         <th scope="col">Kategori</th>
-                                        <th scope="col">Slug</th>
-                                        <th colspan="2" class="text-center">Aksi</th>
+										<th scope="col">Slug</th>
+										<th scope="col">Tag</th>
+                                        <th colspan="3" class="text-center">Aksi</th>
                                     </tr>
                                     </thead>
                                     @php $no = 1; @endphp
                                     @foreach($artikel as $data)
                                     <tr>
-                                        <td>{{ $no++ }}</td>
+										<td>{{ $no++ }}</td>
+										<td>{{ $data->user->name }}</td>
                                         <td>{{ $data->judul }}</td>
-                                        <td><img  src="{{ asset('assets/img/artikel/'.$data->foto)}}" width="15%"></td>
-                                        <td>{{ $data->konten }}</td>
+                                        <td><img src="{{ asset('assets/img/artikel/'.$data->foto)}}" width="100"></td>
+                                        <td>{!! $data->konten !!}</td>
                                         <td>{{ $data->kategori->nama_kategori}}</td>
 										<td>{{ $data->slug }}</td>
 										<td>
@@ -182,6 +185,10 @@
                                         <td>
                                             <a href="{{ route('artikel.edit',$data->id) }}" 
                                             class="btn btn-sm btn-success">Edit Data</a>
+										</td>
+										<td>
+                                            <a href="{{ route('artikel.show',$data->id) }}" 
+                                            class="btn btn-sm btn-primary">Show Data</a>
                                         </td>
                                         <td>
                                             <form action="{{ route('artikel.destroy',$data->id) }}" method="post">
