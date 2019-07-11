@@ -1,458 +1,536 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<title>Single Post</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Tech Mag template project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
-<link href="{{ asset('assets/frontend/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/styles/single.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/styles/single_responsive.css') }}">
-</head>
-<body>
+  <head>
+    <title>Colorlib Wordify &mdash; Minimal Blog Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div class="super_container">
-	
-	<!-- Header -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">
 
-	<header class="header">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
 
-		<!-- Header bar -->
-		<div class="header_bar">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="header_bar_content d-flex flex-row align-items-center justify-content-start">
-							<div class="sub_button text-center"><a href="#">subscribe</a><div class="d-flex flex-row align-items-start justify-content-start"><div></div><div></div><div></div></div></div>
-							<div class="header_social ml-auto">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
 
-		<!-- Header Content -->
-		<div class="header_content_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="header_content d-flex flex-row align-items-center justfy-content-start">
-							<div class="logo_container">
-								<a href="#">
-									<div class="logo"><span>Tech</span>mag</div>
-									<div class="logo_sub">Innovation & Technology Magazine</div>
-								</a>
-							</div>
-							<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
-								<a href="#">
-									<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/extra.jpg') }})"></div>
-									<div class="header_extra_content">
-										<div class="header_extra_title">save 50%</div>
-										<div class="header_extra_subtitle">Buy now in stores</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+  </head>
+  <body>
+    
 
-		<!-- Header Navigation & Search -->
-		<div class="header_nav_container" id="header">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-							
-							<!-- Logo -->
-							<div class="logo_container">
-								<a href="#">
-									<div class="logo"><span>Tech</span>mag</div>
-									<div class="logo_sub">Innovation & Technology Magazine</div>
-								</a>
-							</div>
+    <div class="wrap">
 
-							<!-- Navigation -->
-							<nav class="main_nav">
-								<ul class="main_nav_list d-flex flex-row align-items-center justify-content-start">
-								<li><a href="/">home</a></li>
-									<li><a href="about">about</a></li>
-									<li><a href="contact">contact</a></li>
-									<li><a href="category">category</a></li>
-								</ul>
-							</nav>
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-9 social">
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-instagram"></span></a>
+                <a href="#"><span class="fa fa-youtube-play"></span></a>
+              </div>
+              <div class="col-3 search-top">
+                <!-- <a href="#"><span class="fa fa-search"></span></a> -->
+                <form action="#" class="search-top-form">
+                  <span class="icon fa fa-search"></span>
+                  <input type="text" id="s" placeholder="Type keyword to search...">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
-							<!-- Search -->
-							<div class="header_search_container ml-auto">
-								<div class="header_search">
-									<form action="#" id="header_search_form" class="header_search_form d-flex flex-row align-items-center justfy-content-start">
-										<div><div class="header_search_activation"><i class="fa fa-search" aria-hidden="true"></i></div></div>
-										<input type="text" class="header_search_input" placeholder="Search" required="required">
-									</form>
-								</div>
-							</div>
+        <div class="container logo-wrap">
+          <div class="row pt-5">
+            <div class="col-12 text-center">
+              <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+              <h1 class="site-logo"><a href="/">Wordify</a></h1>
+            </div>
+          </div>
+        </div>
+        
+        <nav class="navbar navbar-expand-md  navbar-light bg-light">
+          <div class="container">
+            
+           
+            <div class="collapse navbar-collapse" id="navbarMenu">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Business</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="dropdown-item" href="category">Asia</a>
+                    <a class="dropdown-item" href="category">Europe</a>
+                    <a class="dropdown-item" href="category">Dubai</a>
+                    <a class="dropdown-item" href="category">Africa</a>
+                    <a class="dropdown-item" href="category">South America</a>
+                  </div>
 
-							<!-- Hamburger -->
-							<div class="hamburger ml-auto menu_mm"><i class="fa fa-bars  trans_200 menu_mm" aria-hidden="true"></i></div>
-						</div>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</header>
+                </li>
 
-	<!-- Menu -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown05">
+                    <a class="dropdown-item" href="category">Lifestyle</a>
+                    <a class="dropdown-item" href="category">Food</a>
+                    <a class="dropdown-item" href="category">Adventure</a>
+                    <a class="dropdown-item" href="category">Travel</a>
+                    <a class="dropdown-item" href="category">Business</a>
+                  </div>
 
-	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		<div class="search">
-			<form action="#" class="header_search_form menu_mm">
-				<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-				<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
-				</button>
-			</form>
-		</div>
-		<nav class="menu_nav">
-			<ul class="menu_mm">
-				<li class="menu_mm"><a href="/">Home</a></li>
-				<li class="menu_mm"><a href="#">Tech</a></li>
-				<li class="menu_mm"><a href="#">Innovation</a></li>
-				<li class="menu_mm"><a href="#">Videos</a></li>
-				<li class="menu_mm"><a href="about">about</a></li>
-				<li class="menu_mm"><a href="contact">Contact</a></li>
-			</ul>
-		</nav>
-		<div class="menu_subscribe"><a href="#">Subscribe</a></div>
-		<div class="menu_extra">
-			<div class="menu_social">
-				<ul>
-					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact</a>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
 
-	<!-- Home -->
+    <section class="site-section py-lg">
+      <div class="container">
+        
+        <div class="row blog-entries element-animate">
 
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('assets/frontend/images/footer.jpg') }}" data-speed="0.8"></div>
-		<div class="home_content_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content">
-							<div class="home_title">Article</div>
-							<div class="breadcrumbs">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="/">Home</a></li>
-									<li><a href="category">Technology</a></li>
-									<li>Article</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <div class="col-md-12 col-lg-8 main-content">
+            <img src="{{ asset('assets/frontend/images/img_10.jpg') }}" alt="Image" class="img-fluid mb-5">
+             <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib" class="mr-2"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+            <h1 class="mb-4">There’s a Cool New Way for Men to Wear Socks and Sandals</h1>
+            <a class="category mb-5" href="#">Food</a> <a class="category mb-5" href="#">Travel</a>
+           
+            <div class="post-content-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt eveniet rerum repellendus porro.</p>
+            <p>Sint ab voluptates itaque, ipsum porro qui obcaecati cumque quas sit vel. Voluptatum provident id quis quo. Eveniet maiores perferendis officia veniam est laborum, expedita fuga doloribus natus repellendus dolorem ab similique sint eius cupiditate necessitatibus, magni nesciunt ex eos.</p>
+            <p>Quis eius aspernatur, eaque culpa cumque reiciendis, nobis at earum assumenda similique ut? Aperiam vel aut, ex exercitationem eos consequuntur eaque culpa totam, deserunt, aspernatur quae eveniet hic provident ullam tempora error repudiandae sapiente illum rerum itaque voluptatem. Commodi, sequi.</p>
+            <div class="row mb-5">
+              <div class="col-md-12 mb-4">
+                <img src="{{ asset('assets/frontend/images/img_7.jpg') }}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="col-md-6 mb-4">
+                <img src="{{ asset('assets/frontend/images/img_9.jpg') }}" alt="Image placeholder" class="img-fluid">
+              </div>
+              <div class="col-md-6 mb-4">
+                <img src="{{ asset('assets/frontend/images/img_11.jpg') }}" alt="Image placeholder" class="img-fluid">
+              </div>
+            </div>
+            <p>Quibusdam autem, quas molestias recusandae aperiam molestiae modi qui ipsam vel. Placeat tenetur veritatis tempore quos impedit dicta, error autem, quae sint inventore ipsa quidem. Quo voluptate quisquam reiciendis, minus, animi minima eum officia doloremque repellat eos, odio doloribus cum.</p>
+            <p>Temporibus quo dolore veritatis doloribus delectus dolores perspiciatis recusandae ducimus, nisi quod, incidunt ut quaerat, magnam cupiditate. Aut, laboriosam magnam, nobis dolore fugiat impedit necessitatibus nisi cupiditate, quas repellat itaque molestias sit libero voluptas eveniet omnis illo ullam dolorem minima.</p>
+            <p>Porro amet accusantium libero fugit totam, deserunt ipsa, dolorem, vero expedita illo similique saepe nisi deleniti. Cumque, laboriosam, porro! Facilis voluptatem sequi nulla quidem, provident eius quos pariatur maxime sapiente illo nostrum quibusdam aliquid fugiat! Earum quod fuga id officia.</p>
+            <p>Illo magnam at dolore ad enim fugiat ut maxime facilis autem, nulla cumque quis commodi eos nisi unde soluta, ipsa eius aspernatur sint atque! Nihil, eveniet illo ea, mollitia fuga accusamus dolor dolorem perspiciatis rerum hic, consectetur error rem aspernatur!</p>
 
-	<!-- Content Container -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus magni explicabo id molestiae, minima quas assumenda consectetur, nobis neque rem, incidunt quam tempore perferendis provident obcaecati sapiente, animi vel expedita omnis quae ipsa! Obcaecati eligendi sed odio labore vero reiciendis facere accusamus molestias eaque impedit, consequuntur quae fuga vitae fugit?</p>
+            </div>
 
-	<div class="content_container">
-		<div class="container">
-			<div class="row">
+            
+            <div class="pt-5">
+              <p>Categories:  <a href="#">Food</a>, <a href="#">Travel</a>  Tags: <a href="#">#manila</a>, <a href="#">#asia</a></p>
+            </div>
 
-				<!-- Single Post -->
 
-				<div class="col-lg-9">
+            <div class="pt-5">
+              <h3 class="mb-5">6 Comments</h3>
+              <ul class="comment-list">
+                <li class="comment">
+                  <div class="vcard">
+                    <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>Jean Doe</h3>
+                    <div class="meta">January 9, 2018 at 2:21pm</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                    <p><a href="#" class="reply rounded">Reply</a></p>
+                  </div>
+                </li>
 
-					<div class="single_post">
-						<div class="post_image"><img src="{{ asset('assets/frontend/images/single.jpg') }}" alt="https://unsplash.com/@cgower"></div>
-						<div class="post_content">
-							<div class="post_category cat_technology"><a href="category">technology</a></div>
-							<div class="post_title"><a href="single">The new Apple release ceremony</a></div>
-							<div class="post_info d-flex flex-row align-items-center justify-content-start">
-								<div class="post_author d-flex flex-row align-items-center justify-content-start">
-									<div><div class="post_author_image"><img src="{{ asset('assets/frontend/images/author_1.jpg') }}" alt=""></div></div>
-									<div class="post_author_name"><a href="#">Michael Smith</a></div>
-								</div>
-								<div class="post_date"><a href="#">29 April 2018</a></div>
-								<div class="post_comments_num ml-auto"><a href="#">3 comments</a></div>
-							</div>
-							<div class="post_text">
-								<p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi convallis metus purus, eget imperdiet ipsum viverra et. Quisque mattis ullamcorper ultricies. Nullam dui dui, porta non vulputate sed, rutrum in ipsum. Quisque nunc velit, feugiat sed mattis a, luctus ac nisl. Praesent pellentesque sapien efficitur, elementum mi sit amet, rutrum mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis mi ac enim mattis vehicula. Integer sit amet ornare quam. Nullam ultrices tempus felis, eget efficitur neque mollis in. Proin congue maximus augue eget scelerisque. Sed fermentum dolor orci, vestibulum vehicula dolor porta sit amet. Morbi cursus ante sed felis luctus semper. Phasellus sed orci mattis, rhoncus arcu ut, vehicula orci. Curabitur sagittis ante vitae egestas tincidunt.</p>
-								<p>Pellentesque in mauris lacinia sem pharetra cursus. Cras a turpis tortor. Nullam vestibulum, velit vitae mattis ultricies, dui est tempor nibh, quis maximus tortor diam vel justo. Ut nec fermentum nisl. Ut mattis massa ullamcorper dui sagittis, et varius sem faucibus. Suspendisse iaculis rutrum leo, non tempus odio mollis a. Aliquam dictum iaculis nunc et vestibulum. Donec vitae facilisis erat. Suspendisse ut risus sed ligula tristique condimentum consectetur non odio. Donec augue diam, ultricies eu tincidunt a, venenatis in lectus. Etiam eget nulla blandit, dictum felis et, egestas lacus. Aliquam sit amet elementum enim. </p>
-							</div>
-						</div>
+                <li class="comment">
+                  <div class="vcard">
+                    <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>Jean Doe</h3>
+                    <div class="meta">January 9, 2018 at 2:21pm</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                    <p><a href="#" class="reply rounded">Reply</a></p>
+                  </div>
 
-						<!-- Social Share -->
-						<div class="post_share d-flex flex-row align-items-center justify-content-start">
-							<div class="post_share_title">Share:</div>
-							<ul class="post_share_list d-flex flex-row align-items-center justify-content-center">
-								<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-						
-						<!-- Comments -->
-						<div class="post_comments_container">
-							<div class="post_comments_title">2 Comments</div>
+                  <ul class="children">
+                    <li class="comment">
+                      <div class="vcard">
+                        <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>Jean Doe</h3>
+                        <div class="meta">January 9, 2018 at 2:21pm</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply rounded">Reply</a></p>
+                      </div>
 
-							<!-- Comments -->
-							<div class="post_comments">
-								
-								<ul class="post_comments_list">
-									
-									<!-- Comment -->
-									<li class="comment">
-										<div class="comment_info d-flex flex-row align-items-center justify-content-start">
-											<div><div class="comment_image"><img src="{{ asset('assets/frontend/images/comment_1.jpg') }}" alt=""></div></div>
-											<div class="comment_author"><a href="#">James Williams</a></div>
-										</div>
-										<div class="comment_content">
-											<div class="comment_text">
-												<p>Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Nullam vestibulum convallis risus vel condimentum.</p>
-											</div>
-											<div class="comment_reply"><a href="#">Reply</a></div>
-										</div>
-									</li>
 
-									<!-- Comment -->
-									<li class="comment">
-										<div class="comment_info d-flex flex-row align-items-center justify-content-start">
-											<div><div class="comment_image"><img src="{{ asset('assets/frontend/images/comment_2.jpg') }}" alt=""></div></div>
-											<div class="comment_author"><a href="#">Rebeka Posner</a></div>
-										</div>
-										<div class="comment_content">
-											<div class="comment_text">
-												<p>Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Nullam vestibulum risus vel condimentum. </p>
-											</div>
-											<div class="comment_reply"><a href="#">Reply</a></div>
-										</div>
-									</li>
+                      <ul class="children">
+                        <li class="comment">
+                          <div class="vcard">
+                            <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                          </div>
+                          <div class="comment-body">
+                            <h3>Jean Doe</h3>
+                            <div class="meta">January 9, 2018 at 2:21pm</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                            <p><a href="#" class="reply rounded">Reply</a></p>
+                          </div>
 
-								</ul>
+                            <ul class="children">
+                              <li class="comment">
+                                <div class="vcard">
+                                  <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                  <h3>Jean Doe</h3>
+                                  <div class="meta">January 9, 2018 at 2:21pm</div>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                  <p><a href="#" class="reply rounded">Reply</a></p>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
 
-							</div>
-						</div>
+                <li class="comment">
+                  <div class="vcard">
+                    <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>Jean Doe</h3>
+                    <div class="meta">January 9, 2018 at 2:21pm</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                    <p><a href="#" class="reply rounded">Reply</a></p>
+                  </div>
+                </li>
+              </ul>
+              <!-- END comment-list -->
+              
+              <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Leave a comment</h3>
+                <form action="#" class="p-5 bg-light">
+                  <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" class="form-control" id="website">
+                  </div>
 
-						<!-- Reply  -->
-						<div class="reply_form_container">
-							<div class="reply_form_title">Leave a reply</div>
-							<form action="#" id="reply_form" class="reply_form">
-								<div class="row">
-									<div class="col-md-6">
-										<input type="text" class="reply_input" placeholder="Name" required="required">
-									</div>
-									<div class="col-md-6">
-										<input type="email" class="reply_input" placeholder="E-mail" required="required">
-									</div>
-								</div>
-								<input type="email" class="reply_input" placeholder="E-mail" required="required">
-								<textarea class="reply_input reply_textarea" placeholder="Message" required="required"></textarea>
-								<button class="reply_button trans_200">submit</button>
-							</form>
-						</div>
-					</div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Post Comment" class="btn btn-primary">
+                  </div>
 
-				</div>
+                </form>
+              </div>
+            </div>
 
-				<!-- Sidebar -->
+          </div>
 
-				<div class="col-lg-3">
-					<div class="sidebar">
+          <!-- END main-content -->
 
-						<!-- Latest Posts -->
-						<div class="sidebar_latest">
-							<div class="sidebar_title">Latest Posts</div>
-							<div class="latest_posts">
-								
-								<!-- Latest Post -->
-								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
-									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_1.jpg') }}" alt="https://unsplash.com/@anniespratt"></div></div>
-									<div class="latest_post_content">
-										<div class="post_category_small cat_video"><a href="category">video</a></div>
-										<div class="latest_post_title"><a href="single">New tech development</a></div>
-										<div class="latest_post_date">March 12, 2018</div>
-									</div>
-								</div>
+          <div class="col-md-12 col-lg-4 sidebar">
+            <div class="sidebar-box search-form-wrap">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon fa fa-search"></span>
+                  <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                </div>
+              </form>
+            </div>
+            <!-- END sidebar-box -->
+            <div class="sidebar-box">
+              <div class="bio text-center">
+                <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
+                <div class="bio-body">
+                  <h2>Craig David</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
+                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <p class="social">
+                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- END sidebar-box -->  
+            <div class="sidebar-box">
+              <h3 class="heading">Popular Posts</h3>
+              <div class="post-entry-sidebar">
+                <ul>
+                  <li>
+                    <a href="">
+                      <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">March 15, 2018 </span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">March 15, 2018 </span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">March 15, 2018 </span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- END sidebar-box -->
 
-								<!-- Latest Post -->
-								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
-									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_2.jpg') }}" alt="https://unsplash.com/@agkdesign"></div></div>
-									<div class="latest_post_content">
-										<div class="post_category_small cat_world"><a href="category">world</a></div>
-										<div class="latest_post_title"><a href="single">New tech development</a></div>
-										<div class="latest_post_date">March 12, 2018</div>
-									</div>
-								</div>
+            <div class="sidebar-box">
+              <h3 class="heading">Categories</h3>
+              <ul class="categories">
+                <li><a href="#">Food <span>(12)</span></a></li>
+                <li><a href="#">Travel <span>(22)</span></a></li>
+                <li><a href="#">Lifestyle <span>(37)</span></a></li>
+                <li><a href="#">Business <span>(42)</span></a></li>
+                <li><a href="#">Adventure <span>(14)</span></a></li>
+              </ul>
+            </div>
+            <!-- END sidebar-box -->
 
-								<!-- Latest Post -->
-								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
-									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_3.jpg') }}" alt="https://unsplash.com/@mfgonz"></div></div>
-									<div class="latest_post_content">
-										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
-										<div class="latest_post_title"><a href="single">New tech development</a></div>
-										<div class="latest_post_date">March 12, 2018</div>
-									</div>
-								</div>
+            <div class="sidebar-box">
+              <h3 class="heading">Tags</h3>
+              <ul class="tags">
+                <li><a href="#">Travel</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Freelancing</a></li>
+                <li><a href="#">Travel</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Freelancing</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- END sidebar -->
 
-								<!-- Latest Post -->
-								<div class="latest_post d-flex flex-row align-items-start justify-content-start">
-									<div><div class="latest_post_image"><img src="{{ asset('assets/frontend/images/latest_4.jpg') }}" alt="https://unsplash.com/@juja_han"></div></div>
-									<div class="latest_post_content">
-										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
-										<div class="latest_post_title"><a href="single">New tech development</a></div>
-										<div class="latest_post_date">March 12, 2018</div>
-									</div>
-								</div>
+        </div>
+      </div>
+    </section>
 
-							</div>
-						</div>
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="mb-3 ">Related Post</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('{{ asset('assets/frontend/images/img_2.jpg') }} ">
+              <div class="text">
+                <div class="post-meta">
+                  <span class="category">Lifestyle</span>
+                  <span class="mr-2">March 15, 2018 </span> &bullet;
+                  <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                </div>
+                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('{{ asset('assets/frontend/images/img_3.jpg') }} ">
+              <div class="text">
+                <div class="post-meta">
+                  <span class="category">Travel</span>
+                  <span class="mr-2">March 15, 2018 </span> &bullet;
+                  <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                </div>
+                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('{{ asset('assets/frontend/images/img_4.jpg') }} ">
+              <div class="text">
+                <div class="post-meta">
+                  <span class="category">Food</span>
+                  <span class="mr-2">March 15, 2018 </span> &bullet;
+                  <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                </div>
+                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-						<!-- Most Viewed -->
 
-						<div class="most_viewed">
-							<div class="sidebar_title">Most Viewed</div>
-							<div class="most_viewed_items">
-								
-								<!-- Most Viewed Item -->
-								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
-									<div><div class="most_viewed_num">01.</div></div>
-									<div class="most_viewed_content">
-										<div class="post_category_small cat_video"><a href="category">video</a></div>
-										<div class="most_viewed_title"><a href="single">New tech development</a></div>
-										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
-									</div>
-								</div>
+    </section>
+    <!-- END section -->
+  
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <h3>About Us</h3>
+              <p class="mb-4">
+                <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="img-fluid">
+              </p>
 
-								<!-- Most Viewed Item -->
-								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
-									<div><div class="most_viewed_num">02.</div></div>
-									<div class="most_viewed_content">
-										<div class="post_category_small cat_world"><a href="category">world</a></div>
-										<div class="most_viewed_title"><a href="single">Robots are taking over</a></div>
-										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
-									</div>
-								</div>
+              <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
+            </div>
+            <div class="col-md-6 ml-auto">
+              <div class="row">
+                <div class="col-md-7">
+                  <h3>Latest Post</h3>
+                  <div class="post-entry-sidebar">
+                    <ul>
+                      <li>
+                        <a href="">
+                          <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="mr-4">
+                          <div class="text">
+                            <h4>How to Find the Video Games of Your Youth</h4>
+                            <div class="post-meta">
+                              <span class="mr-2">March 15, 2018 </span> &bullet;
+                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <img src="{{ asset('assets/frontend/images/img_3.jpg') }}" alt="Image placeholder" class="mr-4">
+                          <div class="text">
+                            <h4>How to Find the Video Games of Your Youth</h4>
+                            <div class="post-meta">
+                              <span class="mr-2">March 15, 2018 </span> &bullet;
+                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
+                          <div class="text">
+                            <h4>How to Find the Video Games of Your Youth</h4>
+                            <div class="post-meta">
+                              <span class="mr-2">March 15, 2018 </span> &bullet;
+                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-1"></div>
+                
+                <div class="col-md-4">
 
-								<!-- Most Viewed Item -->
-								<div class="most_viewed_item d-flex flex-row align-items-start justify-content-start">
-									<div><div class="most_viewed_num">03.</div></div>
-									<div class="most_viewed_content">
-										<div class="post_category_small cat_technology"><a href="category">tech</a></div>
-										<div class="most_viewed_title"><a href="single">10 tips to tech world</a></div>
-										<div class="most_viewed_date"><a href="#">March 12, 2018</a></div>
-									</div>
-								</div>
+                  <div class="mb-5">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Travel</a></li>
+                      <li><a href="#">Adventure</a></li>
+                      <li><a href="#">Courses</a></li>
+                      <li><a href="#">Categories</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="mb-5">
+                    <h3>Social</h3>
+                    <ul class="list-unstyled footer-social">
+                      <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
+                      <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
+                      <li><a href="#"><span class="fa fa-instagram"></span> Instagram</a></li>
+                      <li><a href="#"><span class="fa fa-vimeo"></span> Vimeo</a></li>
+                      <li><a href="#"><span class="fa fa-youtube-play"></span> Youtube</a></li>
+                      <li><a href="#"><span class="fa fa-snapchat"></span> Snapshot</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p class="small">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- END footer -->
 
-							</div>
-						</div>
+    </div>
+    
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
-						<!-- Extra -->
-						<div class="sidebar_extra">
-							<a href="#">
-								<div class="sidebar_title">Advertisement</div>
-								<div class="sidebar_extra_container">
-									<div class="background_image" style="background-image:url({{ asset('assets/frontend/images/extra_2.jpg') }})"></div>
-									<div class="sidebar_extra_content">
-										<div class="sidebar_extra_title">30%</div>
-										<div class="sidebar_extra_title">off</div>
-										<div class="sidebar_extra_subtitle">Buy online now</div>
-									</div>
-								</div>
-							</a>
-						</div>
+    <script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery-migrate-3.0.0.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery.stellar.min.js') }}"></script>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="footer_social">
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<ul class="footer_social_list d-flex flex-row align-items-center justify-content-center">
-							<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer_content">
-			<!-- Image credit: https://unsplash.com/@badashphotos -->
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('assets/frontend/images/footer.jpg') }}" data-speed="0.8"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<div class="logo_container">
-							<a href="#">
-								<div class="logo"><span>Tech</span>mag</div>
-								<div class="logo_sub">Innovation & Technology Magazine</div>
-							</a>
-						</div>
-						<div class="footer_nav_container text-center">
-							<nav class="footer_nav">
-								<ul class="footer_nav_list d-flex flex-md-row flex-column align-items-center justify-content-start">
-								<li><a href="/">home</a></li>
-									<li><a href="about">about</a></li>
-									<li><a href="contact">contact</a></li>
-									<li><a href="category">category</a></li>
-								</ul>
-							</nav>
-						</div>
-						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-</div>
-
-<script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/styles/bootstrap-4.1.2/popper.js') }}"></script>
-<script src="{{ asset('assets/frontend/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/greensock/TweenMax.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/greensock/TimelineMax.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/greensock/animation.gsap.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/easing/easing.js') }}"></script>
-<script src="{{ asset('assets/frontend/plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/js/single.js') }}"></script>
-</body>
+    
+    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+  </body>
 </html>
