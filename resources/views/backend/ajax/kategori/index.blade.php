@@ -87,8 +87,8 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">RianAd</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>On Air</div>
+				<div class="profile-usertitle-name">{{ Auth::user()->name }}</div>
+				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Ajax</div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -139,36 +139,54 @@
 				<h1 class="page-header">Data Kategori</h1>
 			</div>
 		</div><!--/.row-->
-		
+
 		<div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-10">
-            <div class="card border-dark">
-                    <div class="card-body">
-                        <center>
-                            <a href="{{ route('kategori.create') }}" 
-                            class="btn btn-primary">Tambah</a>
-                        </center>
-                        <br>
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Nama Kategori</th>
-                                        <th scope="col">Slug</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="data-kategori">
-                                    
-                                    </tbody>
-                                </table>
-                        </div>
+            <div class="card">
+                <div class="card-body">
+                    {{-- <form action="">
+                    </form> --}}
+                    <div class="form-group">
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="float-right btn btn-primary btn-rounded btn-outline">Tambah Data</button>
+                            <div id="id01" class="modal">
+                            <form class="modal-content animate" action="/action_page.php">
+                                <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <h2>Tambah Data</h2>
+                                </div>
+                                <div class="container">
+                                    <label>Nama Kategori : </label>
+                                    <input type="text" name="nama_kategori" class="form-control" required>
+                                    </div
+                                <div class="container" style="background-color:#f1f1f1">
+                                    <button class="float-right btn btn-info btn-rounded btn-outline tombol-simpan">Simpan</button>
+                                </div>
+                            </form>
+                            </div>
                     </div>
+                    <div class="card-body">
+                        <table id="bs4-table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Slug</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="data-kategori">
+                                {{-- berisi kategori.js --}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>              
+    </div>
 </div>
+
 			</div><!--/.col-->
 			<div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>

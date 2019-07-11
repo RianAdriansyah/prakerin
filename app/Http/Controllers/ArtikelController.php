@@ -22,7 +22,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-       $artikel = Artikel::all();
+       $artikel = Artikel::with('kategori', 'tag')->get();
 
         return view('backend.artikel.index', compact('artikel'));
     }

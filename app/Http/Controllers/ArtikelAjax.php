@@ -16,7 +16,7 @@ class ArtikelAjax extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::with('kategori', 'tag')->get();
            $response = [
                 'success' => true,
                 'data' =>  $artikel,
@@ -88,6 +88,6 @@ class ArtikelAjax extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

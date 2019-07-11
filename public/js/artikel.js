@@ -18,11 +18,11 @@ $(function () {
                     `
                     <tr>
                     <td>${value.judul}</td>
-                    <td>${value.foto}</td> 
+                    <td><img src="/assets/img/artikel/${value.foto}" width="100"></td>
                     <td>${value.slug}</td> 
                     <td>${value.konten}</td> 
-                    <td>${value.nama_kategori}</td>
-                    <td>${value.nama_tag}</td>  
+                    <td>${value.kategori.nama_kategori}</td>
+                    <td>${value.tag[0].nama_tag}</td>  
                     <td><button class="btn btn-danger btn-sm hapus-data" data-id="${value.id}">Hapus</button></td>
                     </tr>
                     `
@@ -41,7 +41,7 @@ $(function () {
             method: "POST",
             dataType: "json",
             data: {
-                nama_kategori: variable_isian_nama,
+                judul: variable_isian_nama,
                 slug: variable_isian_nama
             },
             success: function (berhasil) {
