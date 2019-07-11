@@ -7,7 +7,7 @@
             @csrf
             <div class="form-group">
               <label for="">Nama Tag</label>
-              <input type="text" name="nama_tag" id="" class="form-control" >
+              <input type="text" name="nama_tag" id="" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
             <a name="" id="" class="btn btn-outline-secondary" href="{{route('tag.index')}}" role="button">Kembali</a>
