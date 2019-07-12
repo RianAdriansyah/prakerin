@@ -19,7 +19,9 @@ $(function () {
                     <tr>
                     <td>${value.nama_kategori}</td>
                     <td>${value.slug}</td> 
+                    <td><button class="btn btn-success btn-sm edit-data" data-id="${value.id}">Edit</button></td>
                     <td><button class="btn btn-danger btn-sm hapus-data" data-id="${value.id}">Hapus</button></td>
+
                     </tr>
                     `
                 )
@@ -35,6 +37,29 @@ $(function () {
         $.ajax({
             url: alamat,
             method: "POST",
+            dataType: "json",
+            data: {
+                nama_kategori: variable_isian_nama,
+                slug: variable_isian_nama
+            },
+            success: function (berhasil) {
+                alert(berhasil.message)
+                location.reload();
+            },
+            error: function (gagal) {
+                console.log(gagal)
+            }
+        })
+    })
+
+    // Edit Data
+    $(".tombol-edit").click(function (edit) {
+        edit.preventDefault();
+        var variable_isian_nama = $("input[name=nama_kategori]").val()
+        // console.log(nama)
+        $.ajax({
+            url: alamat,
+            method: "PATCH",
             dataType: "json",
             data: {
                 nama_kategori: variable_isian_nama,
@@ -72,8 +97,10 @@ $(function () {
     })
 })
 
-// Get the modal 1
-var modal = document.getElementById('id01');
+
+
+// Get the modal 2
+var modal = document.getElementById('id02');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {

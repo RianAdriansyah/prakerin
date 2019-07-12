@@ -142,47 +142,25 @@
 		
 		<div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-md-8">
             <div class="card">
-                 <div class="card-body">
-                    {{-- <form action="">
-                    </form> --}}
-                    <div class="form-group">
-                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="float-right btn btn-primary btn-rounded btn-outline">Tambah Data</button>
-                            <div id="id01" class="modal">
-                            <form class="modal-content animate" action="/action_page.php">
-                                <div class="imgcontainer">
-                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                <h2>Tambah Data</h2>
-                                </div>
-                                <div class="container">
-                                    <label>Nama Tag</label>
-                                    <input type="text" name="nama_tag" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                </div>
-                                <div class="container" style="background-color:#f1f1f1">
-                                    <button class="float-right btn btn-primary btn-rounded btn-outline tombol-simpan">Simpan</button>
-                                </div>
-                            </form>
-                            </div>
-                    </div>
-                    <div class="card-body">
-                        <table id="bs4-table" class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Slug</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="data-tag">
-                                {{-- Isinya dari class --}}
-                            </tbody>
-                        </table>
-                    </div>
-
+                <div class="card-body">
+                    <div id="body-tag"></div>
+                        <input class="form-control nama_tag" type="text" name="nama_tag">
+                    <p></p>
+                    <button type="button" class="btn btn-primary tombol-simpan">Tambah</button>
+                <p></p>
+                    <table class="table dataTable">
+                        <thead>
+                            <tr>
+								<th>Nama</th>
+								<th>Slug</th>
+                                <th colspan="2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data-tag">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

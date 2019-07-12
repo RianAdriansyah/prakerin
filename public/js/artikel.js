@@ -32,27 +32,98 @@ $(function () {
     })
 
     // Simpan Data
-    $(".tombol-simpan").click(function (simpan) {
-        simpan.preventDefault();
-        var variable_isian_nama = $("input[name=nama_kategori]").val()
-        // console.log(nama)
+    $('.tambah-artikel').on('click', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: '/api/category',
+            method: "GET",
+            dataType: "JSON",
+            success: function (data) {
+                $.each(data.data, function(key, val) {
+                    $('.kategori').append(
+                        `
+                        <option value="${val.id}">${val.nama}</option>
+                        `
+                    )
+                })
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+
+        $.ajax({
+            url: '/api/tag',
+            method: "GET",
+            dataType: "JSON",
+            success: function (data) {
+                $.each(data.data, function(key, val) {
+                    $('.tag').append(
+                        `
+                        <option value="${val.id}">${val.nama}</option>
+                        `
+                    )
+                })
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    })
+
+    var formData = new FormData();
+
+    $('#form-create-artikel').on('submit', function (e) {
+        e.preventDefault();
+
+        var tag = $('.tag option:selected').attr('value');
+
+        formData.append('foto', $('input[type="file"]')[0].files[0])
+        formData.append('judul', $('.judul').val());
+        formData.append('konten', $('.konten').val());
+        // formData.append('', $('.foto').val());
+        formData.append('kategori',  $('.kategori option:selected').attr('value'));
+        formData.append('tag', [tag]);
+
         $.ajax({
             url: alamat,
             method: "POST",
-            dataType: "json",
-            data: {
-                judul: variable_isian_nama,
-                slug: variable_isian_nama
-            },
-            success: function (berhasil) {
-                alert(berhasil.message)
+            dataType: "JSON",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res.message);
                 location.reload();
             },
-            error: function (gagal) {
-                console.log(gagal)
+            error: function (err) {
+                console.log(err);
+
             }
         })
     })
+
+    $('.data-artikel').on('click', '.e-artikel', function() {
+
+        var id = $(this).data('id')
+        var judul = $(this).data('judul')
+        var konten = $(this).data('konten')
+        var foto = $(this).data('foto')
+        var kategori = $(this).data('kategori')
+        var tag = $(this).data('tag')
+
+        $('.e-judul').val(judul)
+        $('.e-konten').val(konten)
+        $('.prev-foto').attr('src', '/assets/backend/artikel/img/'+foto)
+
+        $.ajax({
+            url: '/api/category',
+            method: "GET",
+
+        })
+    })
+
 
     // Hapus Data
     $(".data-artikel").on('click', '.hapus-data', function () {

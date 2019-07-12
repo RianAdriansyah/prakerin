@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Data Kategori</title>
@@ -102,26 +103,27 @@
 			<li><a href="{{ route('artikel.index') }}"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
 			<li><a href="#"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
 			<li><a href="{{ route('tag.index') }}"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
-			<!-- <li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-			<li><a href="#"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li>
-				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
+		<!-- Modal -->
+<div class="modal fade" id="edit-kategori" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ubah Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <input class="form-control" type="text" name="nama_kategori" id="u-kategori">
+                <input class="form-control" type="hidden" name="id">
+                <p></p>
+                <button type="button" class="btn btn-primary edit-kategori">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
@@ -142,45 +144,25 @@
 
 		<div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    {{-- <form action="">
-                    </form> --}}
-                    <div class="form-group">
-                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="float-right btn btn-primary btn-rounded btn-outline">Tambah Data</button>
-                            <div id="id01" class="modal">
-                            <form class="modal-content animate" action="/action_page.php">
-                                <div class="imgcontainer">
-                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                <h2>Tambah Data</h2>
-                                </div>
-                                <div class="container">
-                                    <label>Nama Kategori : </label>
-                                    <input type="text" name="nama_kategori" class="form-control" required>
-                                    </div
-                                <div class="container" style="background-color:#f1f1f1">
-                                    <button class="float-right btn btn-info btn-rounded btn-outline tombol-simpan">Simpan</button>
-                                </div>
-                            </form>
-                            </div>
-                    </div>
-                    <div class="card-body">
-                        <table id="bs4-table" class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Slug</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="data-kategori">
-                                {{-- berisi kategori.js --}}
-                            </tbody>
-                        </table>
-                    </div>
-
+                    <div id="body-kategori"></div>
+                        <input class="form-control nama_kategori" type="text" name="nama_kategori">
+                    <p></p>
+                    <button type="button" class="btn btn-primary tombol-simpan">Tambah</button>
+                <p></p>
+                    <table class="table dataTable">
+                        <thead>
+                            <tr>
+								<th>Nama</th>
+								<th>Slug</th>
+                                <th colspan="2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data-kategori">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -214,6 +196,5 @@
 	});
 };
 	</script>
-		
 </body>
 </html>
