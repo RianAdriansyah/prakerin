@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Data Artikel</title>
+	<title>Data Artikel | {{ Auth::user()->name }}</title>
 	<link href="{{ asset('assets/backend/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/datepicker3.css') }}" rel="stylesheet">
@@ -132,7 +132,7 @@
 		
 		<div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-11">
             <div class="card border-dark">
                     <div class="card-body">
                         <center>
@@ -197,7 +197,6 @@
             </div>
         </div>
     </div>              
-</div>
 			</div><!--/.col-->
 			<div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
