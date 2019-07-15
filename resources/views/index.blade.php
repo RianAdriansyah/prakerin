@@ -113,7 +113,7 @@
                     <div class="text half-to-full">
                       <span class="category mb-5">GMX</span>
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ Auth::user()->name }}</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"></span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
@@ -128,7 +128,7 @@
                       <span class="category mb-5">NAH</span>
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ Auth::user()->name }}</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"></span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
