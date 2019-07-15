@@ -15,9 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/about', function () {
     return view('about');
@@ -70,4 +70,5 @@ Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/tag', 'TagController');
 });
+Route::resource('/', 'FrontendController');
 

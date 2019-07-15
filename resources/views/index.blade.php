@@ -113,11 +113,9 @@
                     <div class="text half-to-full">
                       <span class="category mb-5">GMX</span>
                       <div class="post-meta">
-                        
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ Auth::user()->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                        
                       </div>
                       <h3>Geoff Max</h3>
                       <p>This is GEOFF Max. Let us kick the world ass.</p>
@@ -125,18 +123,18 @@
                   </a>
                 </div>
                 <div>
-                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/img_2.jpg') }} ">
+                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/nah.png') }} ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Travel</span>
+                      <span class="category mb-5">NAH</span>
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ Auth::user()->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                      <h3>NAH Project</h3>
+                      <p>NAH Project adalah pelopor dan masih menjadi satu-satunya Brand Indonesia yang melakukan metode transparency pricing.</p>
                     </div>
                   </a>
                 </div>
@@ -174,22 +172,25 @@
               <h2 class="mb-4">Latest Posts</h2>
             </div>
           </div>
+
           <div class="row blog-entries">
             <div class="col-md-12 col-lg-8 main-content">
               <div class="row">
+                  @foreach($artikel as $data)
                 <div class="col-md-6">
                   <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_5.jpg') }}" alt="Image placeholder">
+                    <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="Image placeholder">
                     <div class="blog-content-body">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ Auth::user()->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
+                      <h2>{{ $data->judul }}</h2>
                     </div>
                   </a>
                 </div>
+                @endforeach
                 <div class="col-md-6">
                   <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
                     <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder">
@@ -203,7 +204,7 @@
                     </div>
                   </a>
                 </div>
-
+                
                 <div class="col-md-6">
                   <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
                     <img src="{{ asset('assets/frontend/images/img_7.jpg') }}" alt="Image placeholder">
@@ -341,40 +342,20 @@
               <div class="sidebar-box">
                 <h3 class="heading">Popular Posts</h3>
                 <div class="post-entry-sidebar">
+                  @foreach($artikel as $data)
                   <ul>
                     <li>
                       <a href="">
-                        <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="mr-4">
+                        <img src="{{ asset('assets/img/artikel/'.$data->foto)}}" alt="Image placeholder" class="mr-4">
                         <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
+                          <h4>{{ $data->judul }}</h4>
                           <div class="post-meta">
                             <span class="mr-2">March 15, 2018 </span>
                           </div>
                         </div>
                       </a>
                     </li>
-                    <li>
-                      <a href="">
-                        <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                        <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
-                          <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="{{ asset('assets/frontend/images/img_12.jpg') }}" alt="Image placeholder" class="mr-4">
-                        <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
-                          <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>
@@ -432,12 +413,13 @@
                 <div class="col-md-7">
                   <h3>Latest Post</h3>
                   <div class="post-entry-sidebar">
+                    @foreach($artikel as $data)
                     <ul>
                       <li>
                         <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="mr-4">
+                          <img src="{{ asset('assets/img/artikel/'.$data->foto)}}" alt="Image placeholder" class="mr-4">
                           <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
+                            <h4>{{ $data->judul }}</h4>
                             <div class="post-meta">
                               <span class="mr-2">March 15, 2018 </span> &bullet;
                               <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
@@ -445,30 +427,7 @@
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_3.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
+                      @endforeach
                     </ul>
                   </div>
                 </div>

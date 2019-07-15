@@ -19,9 +19,7 @@ $(function () {
                     <tr>
                     <td>${value.nama_kategori}</td>
                     <td>${value.slug}</td> 
-                    <td><button class="btn btn-success btn-sm edit-data" data-id="${value.id}">Edit</button></td>
                     <td><button class="btn btn-danger btn-sm hapus-data" data-id="${value.id}">Hapus</button></td>
-
                     </tr>
                     `
                 )
