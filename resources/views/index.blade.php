@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Colorlib Wordify &mdash; Minimal Blog Template</title>
+    <title>Sneakers Room &mdash; Minimal Blog Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -48,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="/">Wordify</a></h1>
+              <h1 class="site-logo"><a href="/">Sneakers Room</a></h1>
             </div>
           </div>
         </div>
@@ -109,9 +109,9 @@
 
               <div class="owl-carousel owl-theme home-slider">
                 <div>
-                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/img_1.jpg') }} ">
+                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/gmx.jpg') }} ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Food</span>
+                      <span class="category mb-5">GMX</span>
                       <div class="post-meta">
                         
                         <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
@@ -119,8 +119,8 @@
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                      <h3>Geoff Max</h3>
+                      <p>This is GEOFF Max. Let us kick the world ass.</p>
                     </div>
                   </a>
                 </div>

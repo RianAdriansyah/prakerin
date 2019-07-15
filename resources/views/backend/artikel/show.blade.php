@@ -142,15 +142,15 @@
               <input type="text" name="judul" id="" class="form-control" aria-describedby="helpId" value="{{$artikel->judul}}" disabled>
             </div>
             <div class="form-group">
-              <label for="">Konten</label>
-              <input type="text" name="konten" class="form-control" value="{!! $artikel->konten !!}" disabled></input>
+			  <label for="">Konten</label>
+			  <textarea name="konten" id="ckeditor" cols="30" rows="10" class="form-control" disabled>{{ $artikel->konten }}</textarea>
             </div>
             <div class="form-group">
               <label for="">Foto</label>
               <td><img src="{{ asset('assets/img/artikel/'.$artikel->foto)}}" width="50%"></td>
             </div>
             <div class="form-group">
-                <label for="kategori"></label>
+                <label for="kategori">Kategori</label>
                 <input type="text" name="kategori_id" class="form-control" value="{{ $artikel->kategori->nama_kategori }}" disabled>
                   <div class="form-group">
                       <label for="">Tag</label>

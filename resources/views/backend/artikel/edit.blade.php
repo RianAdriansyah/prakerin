@@ -143,14 +143,14 @@
             </div>
             <div class="form-group">
               <label for="">Konten</label>
-              <textarea name="konten" id="konten" cols="30" rows="5" class="form-control ckeditor">{{$artikel->konten}}</textarea>
+              <textarea name="konten" id="texteditor" cols="30" rows="5" class="form-control">{{$artikel->konten}}</textarea>
             </div>
             <div class="form-group">
               <label for="">Foto</label>
               <input type="file" name="foto" id="foto" class="form-control">
             </div>
             <div class="form-group">
-                <label for="kategori"></label>
+                <label for="kategori">Kategori</label>
                 <select name="kategori_id" class="form-control">
                 @foreach($cat as $data)
                   <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
@@ -158,14 +158,16 @@
                 </select>
             </div>
             <div class="form-group">
-              <label for="">Tag</label>
-                <select name="tag[]" class="form-control multiple" value ="$data->nama_tag" multiple>
-                  @foreach($tag as $data)
-                    <option value="{{ $data->id }}">
-                      {{ $data->nama_tag }}</option>
+                      <label for="">Tag</label>
+                      <select name="tag[]" class="form-control multiple" multiple>
+                        @foreach($tag as $data)
+                          <option value="{{ $data->id }}"
+                            {{ (in_array($data->id, $selected)) ?
+                            'selected="selected"' : '' }}>
+                            {{ $data->nama_tag }}</option>
                         @endforeach
-                </select>
-            </div>
+                      </select>
+                    </div>
             <button type="submit" class="btn btn-md btn-info">Simpan</button>
             <a name="" id="" class="btn btn-md btn-warning" href="{{route('artikel.index')}}" role="button">Kembali</a>
         </form>

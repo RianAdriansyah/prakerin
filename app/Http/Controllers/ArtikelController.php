@@ -96,9 +96,9 @@ class ArtikelController extends Controller
         $artikel = Artikel::findOrFail($id);
         $cat = Kategori::all();
         $tag = Tag::all();
-        $select = $artikel->tag->pluck('id')->toArray();
+        $selected = $artikel->tag->pluck('id')->toArray();
 
-        return view('backend.artikel.edit', compact('artikel', 'cat', 'tag', 'select'));
+        return view('backend.artikel.edit', compact('selected', 'artikel', 'cat', 'tag',));
     }
 
     /**

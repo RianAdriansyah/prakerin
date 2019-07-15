@@ -141,7 +141,7 @@
             </div>
                   <div class="form-group">
                     <label for="">Konten</label>
-                    <textarea name="konten" id="ckeditor" cols="30" rows="5" class="form-control ckeditor" required></textarea>
+                    <textarea name="konten" id="texteditor" cols="30" rows="5" class="form-control" required></textarea>
                   </div>
                   <div class="form-group">
                     <label for="">Foto</label>
