@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tambah Artikel | {{ Auth::user()->name }}</title>
+	<title>Tambah Tag | {{ Auth::user()->name }}</title>
 	<link href="{{ asset('assets/backend/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/datepicker3.css') }}" rel="stylesheet">

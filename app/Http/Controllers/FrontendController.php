@@ -12,7 +12,9 @@ class FrontendController extends Controller
     public function index()
     {
         $artikel = Artikel::orderBy('created_at','desc')->paginate(4);
-        return view('index', compact('artikel'));
+        $kategori = Kategori::all();
+        $tag = Tag::all();
+        return view('index', compact('artikel','kategori','tag'));
     }
     
     public function allblog(Request $request)
@@ -29,7 +31,9 @@ class FrontendController extends Controller
 
     public function detailblog(Artikel $artikel)
     {
-        return view('single', compact('artikel'));
+        $kategori = Kategori::all();
+        $tag = Tag::all();
+        return view('single', compact('artikel','kategori','tag'));
     }
 
     public function blogcat(Kategori $cat)

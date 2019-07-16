@@ -71,4 +71,7 @@ Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
     Route::resource('/tag', 'TagController');
 });
 Route::resource('/', 'FrontendController');
+Route::get('/{artikel}', 'FrontendController@detailblog')->name('single');
+    Route::get('/kategori/{cat}', 'FrontendController@blogcat')->name('cat.blog');
+    Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag.blog');
 

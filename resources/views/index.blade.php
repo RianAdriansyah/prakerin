@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sneakers Room &mdash; Minimal Blog Template</title>
+    <title>Sneakers Room &mdash; Local Pride</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -62,37 +62,27 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Business</a>
-                </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="category">Asia</a>
-                    <a class="dropdown-item" href="category">Europe</a>
-                    <a class="dropdown-item" href="category">Dubai</a>
-                    <a class="dropdown-item" href="category">Africa</a>
-                    <a class="dropdown-item" href="category">South America</a>
+                      @foreach($tag as $navtag)
+                    <a class="dropdown-item" href="category">{{ $navtag->nama_tag }}</a>
+                    @endforeach
                   </div>
-
                 </li>
-
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="category">Lifestyle</a>
-                    <a class="dropdown-item" href="category">Food</a>
-                    <a class="dropdown-item" href="category">Adventure</a>
-                    <a class="dropdown-item" href="category">Travel</a>
-                    <a class="dropdown-item" href="category">Business</a>
+                    @foreach($kategori as $navcat)
+                    <a class="dropdown-item" href="category">{{ $navcat->nama_kategori }}</a>
+                    @endforeach
                   </div>
-
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact</a>
+                  <a class="nav-link" href="contact">Berita</a>
                 </li>
               </ul>
               
@@ -113,7 +103,7 @@
                     <div class="text half-to-full">
                       <span class="category mb-5">GMX</span>
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"></span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
@@ -128,7 +118,7 @@
                       <span class="category mb-5">NAH</span>
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"></span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
@@ -144,7 +134,7 @@
                       <span class="category mb-5">Sports</span>
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
@@ -178,11 +168,11 @@
               <div class="row">
                   @foreach($artikel as $data)
                 <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <a href="{{ route('single', $data->slug) }}" class="blog-entry element-animate" data-animate-effect="fadeIn">
                     <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="Image placeholder">
                     <div class="blog-content-body">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> </span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
@@ -191,100 +181,6 @@
                   </a>
                 </div>
                 @endforeach
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-                
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_7.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_8.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_9.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_10.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_11.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-6">
-                  <a href="single" class="blog-entry element-animate" data-animate-effect="fadeIn">
-                    <img src="{{ asset('assets/frontend/images/img_12.jpg') }}" alt="Image placeholder">
-                    <div class="blog-content-body">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>How to Find the Video Games of Your Youth</h2>
-                    </div>
-                  </a>
-                </div>
               </div>
 
               <div class="row mt-5">
@@ -302,12 +198,6 @@
                   </nav>
                 </div>
               </div>
-
-
-              
-
-              
-
             </div>
 
             <!-- END main-content -->
@@ -326,9 +216,9 @@
                 <div class="bio text-center">
                   <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image Placeholder" class="img-fluid">
                   <div class="bio-body">
-                    <h2>David Craig</h2>
+                    <h2>Rian Adriansyah</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                    <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                    <p><a href="about" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                     <p class="social">
                       <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                       <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -345,7 +235,7 @@
                   @foreach($artikel as $data)
                   <ul>
                     <li>
-                      <a href="">
+                      <a href="{{ route('single', $data->slug) }}">
                         <img src="{{ asset('assets/img/artikel/'.$data->foto)}}" alt="Image placeholder" class="mr-4">
                         <div class="text">
                           <h4>{{ $data->judul }}</h4>
@@ -362,13 +252,11 @@
               <!-- END sidebar-box -->
 
               <div class="sidebar-box">
-                <h3 class="heading">Categories</h3>
+                <h3 class="heading">Brand</h3>
                 <ul class="categories">
-                  <li><a href="#">Food <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(22)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(37)</span></a></li>
-                  <li><a href="#">Business <span>(42)</span></a></li>
-                  <li><a href="#">Adventure <span>(14)</span></a></li>
+                    @foreach($kategori as $data)
+                  <li><a href="#">{{ $data->nama_kategori }}<span>(12)</span></a></li>
+                  @endforeach
                 </ul>
               </div>
               <!-- END sidebar-box -->
@@ -376,18 +264,9 @@
               <div class="sidebar-box">
                 <h3 class="heading">Tags</h3>
                 <ul class="tags">
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Adventure</a></li>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Lifestyle</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Freelancing</a></li>
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Adventure</a></li>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Lifestyle</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Freelancing</a></li>
+                    @foreach($tag as $navtag)
+                    <li><a href="#">{{ $navtag->nama_tag }}</a></li>
+                    @endforeach
                 </ul>
               </div>
             </div>
@@ -416,7 +295,7 @@
                     @foreach($artikel as $data)
                     <ul>
                       <li>
-                        <a href="">
+                        <a href="{{ route('single', $data->slug) }}">
                           <img src="{{ asset('assets/img/artikel/'.$data->foto)}}" alt="Image placeholder" class="mr-4">
                           <div class="text">
                             <h4>{{ $data->judul }}</h4>
@@ -436,13 +315,11 @@
                 <div class="col-md-4">
 
                   <div class="mb-5">
-                    <h3>Quick Links</h3>
+                    <h3>Brand</h3>
                     <ul class="list-unstyled">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Travel</a></li>
-                      <li><a href="#">Adventure</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Categories</a></li>
+                        @foreach($kategori as $footcat)
+                      <li><a href="#">{{ $footcat->nama_kategori }}</a></li>
+                      @endforeach
                     </ul>
                   </div>
                   
