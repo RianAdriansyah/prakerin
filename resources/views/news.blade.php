@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Berita &mdash; Local Pride</title>
+    <title>Berita &mdash; Sneakers Room</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -62,29 +62,22 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Business</a>
-                </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="category">Asia</a>
-                    <a class="dropdown-item" href="category">Europe</a>
-                    <a class="dropdown-item" href="category">Dubai</a>
-                    <a class="dropdown-item" href="category">Africa</a>
-                    <a class="dropdown-item" href="category">South America</a>
+                    @foreach($tag as $tagg)
+                    <a class="dropdown-item" href="#">{{ $tagg->nama_tag }}</a>
+                    @endforeach
                   </div>
 
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="category">Lifestyle</a>
-                    <a class="dropdown-item" href="category">Food</a>
-                    <a class="dropdown-item" href="category">Adventure</a>
-                    <a class="dropdown-item" href="category">Travel</a>
-                    <a class="dropdown-item" href="category">Business</a>
+                    @foreach($kategori as $catt)
+                    <a class="dropdown-item" href="category">{{ $catt->nama_kategori }}</a>
+                    @endforeach
                   </div>
 
                 </li>
@@ -92,7 +85,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="news">Berita</a>
+                  <a class="nav-link active" href="news">Berita</a>
                 </li>
               </ul>
               
@@ -107,7 +100,7 @@
       <div class="container">
         <div class="row mb-4">
           <div class="col-md-6">
-            <h2 class="mb-4">Berita Terbaru</h2>
+            <h2 class="mb-4">Berita Seputar Sneakers</h2>
           </div>
         </div>
         <div class="row blog-entries">
@@ -116,136 +109,39 @@
 
               <div class="col-md-12">
 
-                @foreach($artikel as $data)
+              @foreach($artikel as $isi)
                 <div class="post-entry-horzontal">
                   <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$artikel->foto) }})"></div>
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $isi->user->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="mr-2">Food</span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
-                      <h2>{{ $data->judul }}</h2>
+                      <h2>{{ $isi->judul }}</h2>
                     </span>
                   </a>
                 </div>
                 @endforeach
                 <!-- END post -->
-
+                @foreach($artikel as $isi)
                 <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_12.jpg') }}"></div>
+                  <a href="{{ route('single', $isi->slug) }}">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $isi->user->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="mr-2">Food</span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                      <h2>{{ $isi->judul }}</h2>
                     </span>
                   </a>
                 </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_9.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_8.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_7.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_6.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_5.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_4.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
+                @endforeach
 
               </div>
             </div>
@@ -286,7 +182,7 @@
               <div class="bio text-center">
                 <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
                 <div class="bio-body">
-                  <h2>Craig David</h2>
+                  <h2>Rian Adriansyah</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
                   <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                   <p class="social">
@@ -344,11 +240,9 @@
             <div class="sidebar-box">
               <h3 class="heading">Categories</h3>
               <ul class="categories">
-                <li><a href="#">Food <span>(12)</span></a></li>
-                <li><a href="#">Travel <span>(22)</span></a></li>
-                <li><a href="#">Lifestyle <span>(37)</span></a></li>
-                <li><a href="#">Business <span>(42)</span></a></li>
-                <li><a href="#">Adventure <span>(14)</span></a></li>
+                @foreach($kategori as $katt)
+                <li><a href="#">{{ $katt->nama_kategori }}<span>(12)</span></a></li>
+                @endforeach
               </ul>
             </div>
             <!-- END sidebar-box -->
@@ -356,18 +250,11 @@
             <div class="sidebar-box">
               <h3 class="heading">Tags</h3>
               <ul class="tags">
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
+                @foreach($tag as $tags)
+                <li>
+                  <a href="#">{{ $tags->nama_tag }}</a>
+              </li>
+              @endforeach
               </ul>
             </div>
           </div>

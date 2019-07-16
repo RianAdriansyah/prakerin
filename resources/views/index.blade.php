@@ -99,7 +99,7 @@
 
               <div class="owl-carousel owl-theme home-slider">
                 <div>
-                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/gmx.jpg') }} ">
+                  <a href="#" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/gmx.jpg') }} ">
                     <div class="text half-to-full">
                       <span class="category mb-5">GMX</span>
                       <div class="post-meta">
@@ -113,7 +113,7 @@
                   </a>
                 </div>
                 <div>
-                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/nah.png') }} ">
+                  <a href="#" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/nah.png') }} ">
                     <div class="text half-to-full">
                       <span class="category mb-5">NAH</span>
                       <div class="post-meta">
@@ -129,18 +129,18 @@
                   </a>
                 </div>
                 <div>
-                  <a href="single" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/img_3.jpg') }} ">
+                  <a href="#" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/compass.jpg') }} ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Sports</span>
+                      <span class="category mb-5">Compass</span>
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                      <h3>Compass ID</h3>
+                      <p>Tahun ini, menurut Aji, Compass mengenalkan Compass Bravo yang merupakan kolaborasi dengan Bryant sebagai langkah baru brand.</p>
                     </div>
                   </a>
                 </div>
@@ -214,7 +214,7 @@
               <!-- END sidebar-box -->
               <div class="sidebar-box">
                 <div class="bio text-center">
-                  <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image Placeholder" class="img-fluid">
+                  <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
                   <div class="bio-body">
                     <h2>Rian Adriansyah</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>

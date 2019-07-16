@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{{ $artikel->judul }} &mdash; Local Pride</title>
+    <title>{{ $artikel->judul }} &mdash; Sneakers Room</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -85,7 +85,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               
@@ -183,7 +183,7 @@
                 <div class="bio-body">
                   <h2>Rian Adriansyah</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="about" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <p><a href="../about/" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -231,7 +231,7 @@
             <div class="col-md-4">
               <h3>About Us</h3>
               <p class="mb-4">
-                <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="img-fluid">
+                <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="img-fluid">
               </p>
 
               <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>

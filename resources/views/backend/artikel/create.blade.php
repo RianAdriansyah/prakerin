@@ -157,7 +157,7 @@
                     </div>
                     <div class="form-group">
                       <label for="">Tag</label>
-                      <select name="tag[]" class="form-control multiple" id="select2" multiple required>
+                      <select name="tag[]" class="form-control multiple" multiple required>
                         @foreach($tag as $data)
                         <option value="{{ $data->id }}">
                           {{ $data->nama_tag }}</option>
