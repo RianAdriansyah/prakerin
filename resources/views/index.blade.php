@@ -82,7 +82,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact">Berita</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               

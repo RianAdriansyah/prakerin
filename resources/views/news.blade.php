@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Colorlib Wordify &mdash; Minimal Blog Template</title>
+    <title>Berita &mdash; Local Pride</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
@@ -78,7 +78,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle active" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     <a class="dropdown-item" href="category">Lifestyle</a>
                     <a class="dropdown-item" href="category">Food</a>
@@ -92,7 +92,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="contact">Contact</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               
@@ -103,43 +103,169 @@
       <!-- END header -->
 
 
-    <section class="site-section">
+    <section class="site-section pt-5">
       <div class="container">
         <div class="row mb-4">
           <div class="col-md-6">
-            <h1>Contact Me</h1>
+            <h2 class="mb-4">Berita Terbaru</h2>
           </div>
         </div>
         <div class="row blog-entries">
           <div class="col-md-12 col-lg-8 main-content">
-            
-            <form action="#" method="post">
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" class="form-control ">
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label for="phone">Phone</label>
-                      <input type="text" id="phone" class="form-control ">
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control ">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="message">Write Message</label>
-                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="submit" value="Send Message" class="btn btn-primary">
-                    </div>
-                  </div>
-                </form>
+            <div class="row mb-5 mt-5">
+
+              <div class="col-md-12">
+
+                @foreach($artikel as $data)
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$artikel->foto) }})"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>{{ $data->judul }}</h2>
+                    </span>
+                  </a>
+                </div>
+                @endforeach
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_12.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_9.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_8.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_7.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_6.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_5.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="single">
+                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/frontend/images/img_4.jpg') }}"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="mr-2">Food</span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+              </div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-md-12 text-center">
+                <nav aria-label="Page navigation" class="text-center">
+                  <ul class="pagination">
+                    <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
             
 
           </div>
@@ -158,11 +284,11 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image Placeholder" class="img-fluid">
+                <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
                 <div class="bio-body">
-                  <h2>Meagan Smith</h2>
+                  <h2>Craig David</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm">Read my bio</a></p>
+                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -183,8 +309,7 @@
                       <div class="text">
                         <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span> &bullet;
-                          <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                          <span class="mr-2">March 15, 2018 </span>
                         </div>
                       </div>
                     </a>
@@ -195,8 +320,7 @@
                       <div class="text">
                         <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span> &bullet;
-                          <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                          <span class="mr-2">March 15, 2018 </span>
                         </div>
                       </div>
                     </a>
@@ -207,8 +331,7 @@
                       <div class="text">
                         <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span> &bullet;
-                          <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                          <span class="mr-2">March 15, 2018 </span>
                         </div>
                       </div>
                     </a>

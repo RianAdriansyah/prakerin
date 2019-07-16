@@ -23,8 +23,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/news', function () {
+    return view('news');
 });
 
 Route::get('/single', function () {
@@ -71,7 +71,7 @@ Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
     Route::resource('/tag', 'TagController');
 });
 Route::resource('/', 'FrontendController');
+Route::get('/news', 'FrontendController@allblog')->name('news');
 Route::get('/{artikel}', 'FrontendController@detailblog')->name('single');
-    Route::get('/kategori/{cat}', 'FrontendController@blogcat')->name('cat.blog');
-    Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag.blog');
-
+    Route::get('/kategori/{cat}', 'FrontendController@blogcat')->name('category');
+    Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag');

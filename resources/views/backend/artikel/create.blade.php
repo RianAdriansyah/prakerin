@@ -157,7 +157,7 @@
                     </div>
                     <div class="form-group">
                       <label for="">Tag</label>
-                      <select name="tag[]" class="form-control multiple" multiple required>
+                      <select name="tag[]" class="form-control multiple" id="select2" multiple required>
                         @foreach($tag as $data)
                         <option value="{{ $data->id }}">
                           {{ $data->nama_tag }}</option>
@@ -186,6 +186,9 @@
 	<script src="{{ asset('assets/backend/js/bootstrap-datepicker.js') }}"></script>
   <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
   <script src="{{ asset('assets/backend/ckeditor/ckeditor.js') }}"></script>
+  <script src="{{ asset('assets/backend/select2/dist/css/select2.min.css') }}"></script>
+  <script src="{{ asset('assets/backend/select2/dist/js/select2.min.js') }}"></script>
+
     <script>
     CKEDITOR.replace( 'texteditor' );
     </script>
