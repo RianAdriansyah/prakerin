@@ -148,7 +148,6 @@
 										<th scope="col">Penulis</th>
                                         <th scope="col">Judul Artikel</th>
                                         <th scope="col">Foto</th>
-                                        <th scope="col">Konten</th>
                                         <th scope="col">Kategori</th>
 										<th scope="col">Slug</th>
 										<th scope="col">Tag</th>
@@ -162,7 +161,6 @@
 										<td>{{ $data->user->name }}</td>
                                         <td>{{ $data->judul }}</td>
                                         <td><img src="{{ asset('assets/img/artikel/'.$data->foto)}}" width="100"></td>
-                                        <td>{!! $data->konten !!}</td>
                                         <td>{{ $data->kategori->nama_kategori}}</td>
 										<td>{{ $data->slug }}</td>
 										<td>
