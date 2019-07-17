@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Berita &mdash; Sneakers Room</title>
+    <title>{{ $artikel->judul }} &mdash; Sneakers Room</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
 
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
@@ -48,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="/">Sneakers Room</a></h1>
+              <h1 class="site-logo"><a href="/">{{ $artikel->judul }}</a></h1>
             </div>
           </div>
         </div>
@@ -65,18 +65,18 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    @foreach($tag as $tagg)
-                    <a class="dropdown-item" href="#">{{ $tagg->nama_tag }}</a>
+                    @foreach($tag as $navtagg)
+                    <a class="dropdown-item" href="category">{{ $navtagg->nama_tag }}</a>
                     @endforeach
                   </div>
 
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    @foreach($kategori as $catt)
-                    <a class="dropdown-item" href="category">{{ $catt->nama_kategori }}</a>
+                    @foreach($kategori as $navcatt)
+                    <a class="dropdown-item" href="category">{{ $navcatt->nama_kategori }}</a>
                     @endforeach
                   </div>
 
@@ -85,7 +85,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="news">Berita</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               
@@ -95,56 +95,73 @@
       </header>
       <!-- END header -->
 
-
-    <section class="site-section pt-5">
+    <section class="site-section py-lg">
       <div class="container">
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <h2 class="mb-4">Berita Seputar Sneakers</h2>
-          </div>
-        </div>
-        <div class="row blog-entries">
-          <div class="col-md-12 col-lg-8 main-content">
-            <div class="row mb-5 mt-5">
+        
+        <div class="row blog-entries element-animate">
 
-              <div class="col-md-12">
-                <!-- END post -->
-                @foreach($artikel as $isi)
-                <div class="post-entry-horzontal">
-                  <a href="{{ route('single', $isi->slug) }}">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $isi->user->name }}</span>&bullet;
+          <div class="col-md-12 col-lg-8 main-content">
+            <img src="{{ asset('assets/img/artikel/'.$artikel->foto) }}" alt="Image" class="img-fluid mb-5">
+             <div class="post-meta">
+                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib" class="mr-2">{{ $artikel->user->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
-                      <h2>{{ $isi->judul }}</h2>
-                    </span>
-                  </a>
-                </div>
-                @endforeach
-              </div>
+            <h1 class="mb-4">{{ $artikel->judul }}</h1>
+            @foreach($artikel->tag as $singletag)
+            <a class="category mb-5" href="#">{{ $singletag->nama_tag }}</a>
+            @endforeach
+            <div class="post-content-body">
+              <p>{!! $artikel->konten !!}</p>
+            </div>
+            <div class="pt-5">
+              <p>Categories: 
+            @foreach($kategori as $cat) 
+                <a href="#">{{ $cat->nama_kategori }}, </a>
+            @endforeach
+            </p>
             </div>
 
-            <div class="row mt-5">
-              <div class="col-md-12 text-center">
-                <nav aria-label="Page navigation" class="text-center">
-                  <ul class="pagination">
-                    <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
-                  </ul>
-                </nav>
+
+            <div class="pt-5">
+              <h3 class="mb-5">1 Discussion</h3>
+              <ul class="comment-list">
+                <li class="comment">
+                  <div class="vcard">
+                    <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>Jean Doe</h3>
+                    <div class="meta">January 9, 2018 at 2:21pm</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                    <p><a href="#" class="reply rounded">Reply</a></p>
+                  </div>
+                </li>
+              </ul>
+              <!-- END comment-list -->
+              
+              <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Make a discussion</h3>
+                <form action="#" class="p-5 bg-light">
+                  <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Post Comment" class="btn btn-primary">
+                  </div>
+
+                </form>
               </div>
             </div>
-
-            
 
           </div>
 
@@ -166,7 +183,7 @@
                 <div class="bio-body">
                   <h2>Rian Adriansyah</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <p><a href="../about/" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -177,53 +194,14 @@
               </div>
             </div>
             <!-- END sidebar-box -->  
-            <div class="sidebar-box">
-              <h3 class="heading">Popular Posts</h3>
-              <div class="post-entry-sidebar">
-                <ul>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_12.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            
             <!-- END sidebar-box -->
 
             <div class="sidebar-box">
-              <h3 class="heading">Categories</h3>
+              <h3 class="heading">Brand</h3>
               <ul class="categories">
-                @foreach($kategori as $katt)
-                <li><a href="#">{{ $katt->nama_kategori }}<span>(12)</span></a></li>
+                @foreach($kategori as $catt)
+                <li><a href="#">{{ $catt->nama_kategori }} <span>(12)</span></a></li>
                 @endforeach
               </ul>
             </div>
@@ -232,11 +210,9 @@
             <div class="sidebar-box">
               <h3 class="heading">Tags</h3>
               <ul class="tags">
-                @foreach($tag as $tags)
-                <li>
-                  <a href="#">{{ $tags->nama_tag }}</a>
-              </li>
-              @endforeach
+                @foreach($tag as $tagg)
+                <li><a href="#">{{ $tagg->nama_tag }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>
@@ -245,6 +221,9 @@
         </div>
       </div>
     </section>
+
+    
+    <!-- END section -->
   
     <footer class="site-footer">
         <div class="container">
@@ -252,7 +231,7 @@
             <div class="col-md-4">
               <h3>About Us</h3>
               <p class="mb-4">
-                <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="img-fluid">
+                <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="img-fluid">
               </p>
 
               <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
@@ -307,13 +286,11 @@
                 <div class="col-md-4">
 
                   <div class="mb-5">
-                    <h3>Quick Links</h3>
+                    <h3>Brand</h3>
                     <ul class="list-unstyled">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Travel</a></li>
-                      <li><a href="#">Adventure</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Categories</a></li>
+                      @foreach($kategori as $footcatt)
+                      <li><a href="#">{{ $footcatt->nama_kategori }}</a></li>
+                      @endforeach
                     </ul>
                   </div>
                   

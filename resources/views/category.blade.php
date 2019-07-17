@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{{ $kategori->nama_kategori }} &mdash; Local Pride</title>
+    <title>Category &mdash; Local Pride</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -48,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="/">Wordify</a></h1>
+              <h1 class="site-logo"><a href="/">Sneakers Room</a></h1>
             </div>
           </div>
         </div>
@@ -61,9 +61,6 @@
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Business</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
@@ -92,7 +89,7 @@
                   <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               

@@ -62,9 +62,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Business</a>
-                </li>
+                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -92,7 +90,7 @@
                   <a class="nav-link active" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact</a>
+                  <a class="nav-link" href="news">Berita</a>
                 </li>
               </ul>
               
