@@ -62,21 +62,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    @foreach($tag as $navtagg)
-                    <a class="dropdown-item" href="#">{{ $navtagg->nama_tag }}</a>
-                    @endforeach
-                  </div>
-
-                </li>
+                
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     @foreach($kategori as $navcatt)
-                    <a class="dropdown-item" href="#">{{ $navcatt->nama_kategori }}</a>
+                    <a class="dropdown-item" href="{{ route('category', $navcatt->slug) }}">{{ $navcatt->nama_kategori }}</a>
                     @endforeach
                   </div>
 
@@ -201,7 +193,7 @@
               <h3 class="heading">Brand</h3>
               <ul class="categories">
                 @foreach($kategori as $catt)
-                <li><a href="#">{{ $catt->nama_kategori }} <span>(12)</span></a></li>
+                <li><a href="{{ route('category', $catt->slug) }}">{{ $catt->nama_kategori }} <span>(12)</span></a></li>
                 @endforeach
               </ul>
             </div>
@@ -245,7 +237,7 @@
                     <h3>Brand</h3>
                     <ul class="list-unstyled">
                       @foreach($kategori as $footcatt)
-                      <li><a href="#">{{ $footcatt->nama_kategori }}</a></li>
+                      <li><a href="{{ route('category', $footcatt->slug) }}">{{ $footcatt->nama_kategori }}</a></li>
                       @endforeach
                     </ul>
                   </div>

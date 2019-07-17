@@ -62,21 +62,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    @foreach($tag as $tagg)
-                    <a class="dropdown-item" href="#">{{ $tagg->nama_tag }}</a>
-                    @endforeach
-                  </div>
-
-                </li>
+                
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     @foreach($kategori as $catt)
-                    <a class="dropdown-item" href="category">{{ $catt->nama_kategori }}</a>
+                    <a class="dropdown-item" href="{{ route('category', $catt->slug) }}">{{ $catt->nama_kategori }}</a>
                     @endforeach
                   </div>
 
@@ -176,34 +168,14 @@
               </div>
             </div>
             <!-- END sidebar-box -->  
-            <div class="sidebar-box">
-              <h3 class="heading">Popular Posts</h3>
-              <div class="post-entry-sidebar">
-                <ul>
-                  @foreach($artikel as $tes)
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/img/artikel/'.$tes->foto) }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>{{ $tes->judul }}</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  @endforeach
-                  
-                </ul>
-              </div>
-            </div>
+            
             <!-- END sidebar-box -->
 
             <div class="sidebar-box">
               <h3 class="heading">Brand</h3>
               <ul class="categories">
                 @foreach($kategori as $katt)
-                <li><a href="#">{{ $katt->nama_kategori }}<span>(12)</span></a></li>
+                <li><a href="#={{ route('category', $katt->slug) }}">{{ $katt->nama_kategori }}<span>(12)</span></a></li>
                 @endforeach
               </ul>
             </div>

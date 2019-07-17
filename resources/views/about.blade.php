@@ -55,8 +55,6 @@
         
         <nav class="navbar navbar-expand-md  navbar-light bg-light">
           <div class="container">
-            
-           
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">

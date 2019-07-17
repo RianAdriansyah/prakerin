@@ -62,19 +62,12 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="/">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                      @foreach($tag as $navtag)
-                    <a class="dropdown-item" href="category">{{ $navtag->nama_tag }}</a>
-                    @endforeach
-                  </div>
-                </li>
+                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     @foreach($kategori as $navcat)
-                    <a class="dropdown-item" href="category">{{ $navcat->nama_kategori }}</a>
+                    <a class="dropdown-item" href="{{ route('category', $navcat->slug) }}">{{ $navcat->nama_kategori }}</a>
                     @endforeach
                   </div>
                 </li>
@@ -255,7 +248,7 @@
                 <h3 class="heading">Brand</h3>
                 <ul class="categories">
                     @foreach($kategori as $data)
-                  <li><a href="#">{{ $data->nama_kategori }}<span>(12)</span></a></li>
+                  <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}<span>(12)</span></a></li>
                   @endforeach
                 </ul>
               </div>
