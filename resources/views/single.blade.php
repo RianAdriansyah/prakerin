@@ -238,54 +238,10 @@
             </div>
             <div class="col-md-6 ml-auto">
               <div class="row">
-                <div class="col-md-7">
-                  <h3>Latest Post</h3>
-                  <div class="post-entry-sidebar">
-                    <ul>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_3.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-1"></div>
                 
                 <div class="col-md-4">
 
-                  <div class="mb-5">
+                  <div class="mb-6">
                     <h3>Brand</h3>
                     <ul class="list-unstyled">
                       @foreach($kategori as $footcatt)
