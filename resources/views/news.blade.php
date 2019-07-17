@@ -117,7 +117,7 @@
                       <div class="post-meta">
                         <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $isi->user->name }}</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Food</span> &bullet;
+                        <span class="mr-2">Sneakers</span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                       </div>
                       <h2>{{ $isi->judul }}</h2>
@@ -181,46 +181,27 @@
               <h3 class="heading">Popular Posts</h3>
               <div class="post-entry-sidebar">
                 <ul>
+                  @foreach($artikel as $tes)
                   <li>
                     <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="mr-4">
+                      <img src="{{ asset('assets/img/artikel/'.$tes->foto) }}" alt="Image placeholder" class="mr-4">
                       <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <h4>{{ $tes->judul }}</h4>
                         <div class="post-meta">
                           <span class="mr-2">March 15, 2018 </span>
                         </div>
                       </div>
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_12.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
+                  @endforeach
+                  
                 </ul>
               </div>
             </div>
             <!-- END sidebar-box -->
 
             <div class="sidebar-box">
-              <h3 class="heading">Categories</h3>
+              <h3 class="heading">Brand</h3>
               <ul class="categories">
                 @foreach($kategori as $katt)
                 <li><a href="#">{{ $katt->nama_kategori }}<span>(12)</span></a></li>
@@ -258,64 +239,10 @@
               <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
             </div>
             <div class="col-md-6 ml-auto">
-              <div class="row">
-                <div class="col-md-7">
-                  <h3>Latest Post</h3>
-                  <div class="post-entry-sidebar">
-                    <ul>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_3.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-1"></div>
                 
                 <div class="col-md-4">
 
-                  <div class="mb-5">
-                    <h3>Quick Links</h3>
-                    <ul class="list-unstyled">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Travel</a></li>
-                      <li><a href="#">Adventure</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
+                  
                   
                   <div class="mb-5">
                     <h3>Social</h3>

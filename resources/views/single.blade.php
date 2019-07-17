@@ -63,29 +63,29 @@
                   <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
                     @foreach($tag as $navtagg)
-                    <a class="dropdown-item" href="category">{{ $navtagg->nama_tag }}</a>
+                    <a class="dropdown-item" href="#">{{ $navtagg->nama_tag }}</a>
                     @endforeach
                   </div>
 
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     @foreach($kategori as $navcatt)
-                    <a class="dropdown-item" href="category">{{ $navcatt->nama_kategori }}</a>
+                    <a class="dropdown-item" href="#">{{ $navcatt->nama_kategori }}</a>
                     @endforeach
                   </div>
 
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about">About</a>
+                  <a class="nav-link" href="../about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="news">Berita</a>
+                  <a class="nav-link" href="../news">Berita</a>
                 </li>
               </ul>
               
