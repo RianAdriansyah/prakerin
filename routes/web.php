@@ -74,6 +74,5 @@ Route::resource('/', 'FrontendController');
 Route::get('/news', 'FrontendController@allblog')->name('news');
 Route::get('/{artikel}', 'FrontendController@detailblog')->name('single');
 Route::get('/news/{artikel}', 'FrontendController@detailblog')->name('single');
-
-    Route::get('/category/{cat}', 'FrontendController@blogcat')->name('category');
-    Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag');
+Route::get('/category/{cat}', 'FrontendController@blogcat')->name('category');
+Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag');

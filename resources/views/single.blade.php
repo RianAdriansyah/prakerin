@@ -109,7 +109,7 @@
             <div class="pt-5">
               <p>Categories: 
             @foreach($kategori as $cat) 
-                <a href="#">{{ $cat->nama_kategori }}, </a>
+                <a href="{{ route('category', $cat->slug) }}">{{ $cat->nama_kategori }}, </a>
             @endforeach
             </p>
             </div>
@@ -150,7 +150,6 @@
                   <div class="form-group">
                     <input type="submit" value="Post Comment" class="btn btn-primary">
                   </div>
-
                 </form>
               </div>
             </div>
