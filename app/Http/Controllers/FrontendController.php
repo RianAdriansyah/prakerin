@@ -53,7 +53,8 @@ class FrontendController extends Controller
 
     public function blogtag(Tag $tag)
     {
+        $kategori = Kategori::all();
         $artikel = $tag->artikel()->latest()->paginate(5);
-        return view('tag', compact('artikel', 'tag'));
+        return view('tag', compact('artikel', 'tag', 'kategori'));
     }
 }

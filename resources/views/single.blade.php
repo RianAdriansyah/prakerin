@@ -62,8 +62,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                
-
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
@@ -94,11 +92,11 @@
 
           <div class="col-md-12 col-lg-8 main-content">
             <img src="{{ asset('assets/img/artikel/'.$artikel->foto) }}" alt="Image" class="img-fluid mb-5">
-             <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib" class="mr-2">{{ $artikel->user->name }}</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
+            <div class="post-meta">
+              <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib" class="mr-2">{{ $artikel->user->name }}</span>&bullet;
+              <span class="mr-2">March 15, 2018 </span> &bullet;
+              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+            </div>
             <h1 class="mb-4">{{ $artikel->judul }}</h1>
             @foreach($artikel->tag as $singletag)
             <a class="category mb-5" href="#">{{ $singletag->nama_tag }}</a>
@@ -159,55 +157,46 @@
           <!-- END main-content -->
 
           <div class="col-md-12 col-lg-4 sidebar">
-            <div class="sidebar-box search-form-wrap">
-              <form action="#" class="search-form">
-                <div class="form-group">
-                  <span class="icon fa fa-search"></span>
-                  <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
-                </div>
-              </form>
-            </div>
-            <!-- END sidebar-box -->
-            <div class="sidebar-box">
-              <div class="bio text-center">
-                <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
-                <div class="bio-body">
-                  <h2>Rian Adriansyah</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="../about/" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
-                  <p class="social">
-                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
-                  </p>
+              <!-- END sidebar-box -->
+              <div class="sidebar-box">
+                <div class="bio text-center">
+                  <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
+                  <div class="bio-body">
+                    <h2>Rian Adriansyah</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
+                    <p><a href="../about/" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                    <p class="social">
+                      <a href="https://web.facebook.com/rian.adriansyah.98434" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="https://twitter.com/RianAd01" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="https://www.instagram.com/rian_ad01/" class="p-2"><span class="fa fa-instagram"></span></a>
+                      <a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- END sidebar-box -->  
-            
-            <!-- END sidebar-box -->
+              <!-- END sidebar-box -->  
+             
+              <!-- END sidebar-box -->
 
-            <div class="sidebar-box">
-              <h3 class="heading">Brand</h3>
-              <ul class="categories">
-                @foreach($kategori as $catt)
-                <li><a href="{{ route('category', $catt->slug) }}">{{ $catt->nama_kategori }} <span>(12)</span></a></li>
-                @endforeach
-              </ul>
-            </div>
-            <!-- END sidebar-box -->
+              <div class="sidebar-box">
+                <h3 class="heading">Brand</h3>
+                <ul class="categories">
+                    @foreach($kategori as $data)
+                  <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}<span>(12)</span></a></li>
+                  @endforeach
+                </ul>
+              </div>
+              <!-- END sidebar-box -->
 
-            <div class="sidebar-box">
-              <h3 class="heading">Tags</h3>
-              <ul class="tags">
-                @foreach($tag as $tagg)
-                <li><a href="#">{{ $tagg->nama_tag }}</a></li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-          <!-- END sidebar -->
+              <div class="sidebar-box">
+                <h3 class="heading">Tags</h3>
+                <ul class="tags">
+                    @foreach($tag as $navtag)
+                    <li><a href="{{ route('tag', $navtag->slug) }}">{{ $navtag->nama_tag }}</a></li>
+                    @endforeach
+                </ul>
+              </div>
+            </div>          <!-- END sidebar -->
 
         </div>
       </div>
@@ -215,74 +204,4 @@
 
     
     <!-- END section -->
-  
-    <footer class="site-footer">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-4">
-              <h3>About Us</h3>
-              <p class="mb-4">
-                <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="img-fluid">
-              </p>
-
-              <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
-            </div>
-            <div class="col-md-6 ml-auto">
-              <div class="row">
-                
-                <div class="col-md-4">
-
-                  <div class="mb-6">
-                    <h3>Brand</h3>
-                    <ul class="list-unstyled">
-                      @foreach($kategori as $footcatt)
-                      <li><a href="{{ route('category', $footcatt->slug) }}">{{ $footcatt->nama_kategori }}</a></li>
-                      @endforeach
-                    </ul>
-                  </div>
-                  
-                  <div class="mb-5">
-                    <h3>Social</h3>
-                    <ul class="list-unstyled footer-social">
-                      <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
-                      <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
-                      <li><a href="#"><span class="fa fa-instagram"></span> Instagram</a></li>
-                      <li><a href="#"><span class="fa fa-vimeo"></span> Vimeo</a></li>
-                      <li><a href="#"><span class="fa fa-youtube-play"></span> Youtube</a></li>
-                      <li><a href="#"><span class="fa fa-snapchat"></span> Snapshot</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <p class="small">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- END footer -->
-
-    </div>
-    
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
-    <script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery-migrate-3.0.0.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery.stellar.min.js') }}"></script>
-
-    
-    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
-  </body>
-</html>
+@include('layouts.footer')

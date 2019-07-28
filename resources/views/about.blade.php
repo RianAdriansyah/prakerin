@@ -28,10 +28,10 @@
           <div class="container">
             <div class="row">
               <div class="col-9 social">
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-instagram"></span></a>
-                <a href="#"><span class="fa fa-youtube-play"></span></a>
+              <a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
+                <a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a>
+                <a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a>
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
@@ -283,14 +283,6 @@
           <!-- END main-content -->
 
           <div class="col-md-12 col-lg-4 sidebar">
-            <div class="sidebar-box search-form-wrap">
-              <form action="#" class="search-form">
-                <div class="form-group">
-                  <span class="icon fa fa-search"></span>
-                  <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
-                </div>
-              </form>
-            </div>
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
@@ -461,12 +453,10 @@
                   <div class="mb-5">
                     <h3>Social</h3>
                     <ul class="list-unstyled footer-social">
-                      <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
-                      <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
-                      <li><a href="#"><span class="fa fa-instagram"></span> Instagram</a></li>
-                      <li><a href="#"><span class="fa fa-vimeo"></span> Vimeo</a></li>
-                      <li><a href="#"><span class="fa fa-youtube-play"></span> Youtube</a></li>
-                      <li><a href="#"><span class="fa fa-snapchat"></span> Snapshot</a></li>
+                    <li><a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a></li>
                     </ul>
                   </div>
                 </div>
