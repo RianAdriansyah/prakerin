@@ -52,11 +52,6 @@ Route::get('/ajax/artikel', function () {
     return view('backend/ajax/artikel/index');
 });
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -69,10 +64,13 @@ Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
     Route::resource('/artikel', 'ArtikelController');
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/tag', 'TagController');
+    Route::resource('/rekomendasi', 'RekomendasiController');
 });
 Route::resource('/', 'FrontendController');
 Route::get('/news', 'FrontendController@allblog')->name('news');
+Route::get('/about', 'FrontendController@about')->name('about');
 Route::get('/{artikel}', 'FrontendController@detailblog')->name('single');
 Route::get('/news/{artikel}', 'FrontendController@detailblog')->name('single');
+Route::get('/rekomendasi/{artikel}', 'FrontendController@detailblog')->name('single');
 Route::get('/category/{cat}', 'FrontendController@blogcat')->name('category');
 Route::get('/tag/{tag}', 'FrontendController@blogtag')->name('tag');

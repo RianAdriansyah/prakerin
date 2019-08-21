@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\Kategori;
+use App\Rekomendasi;
 use App\Tag;
 
 class FrontendController extends Controller
@@ -14,7 +15,8 @@ class FrontendController extends Controller
         $artikel = Artikel::with('kategori','tag')->orderBy('created_at','desc')->paginate(4);
         $kategori = Kategori::all();
         $tag = Tag::all();
-        return view('index', compact('artikel','kategori','tag'));
+        $rekomendasi = Rekomendasi::all();
+        return view('index', compact('artikel', 'kategori', 'tag', 'rekomendasi'));
     }
     
     public function allblog(Request $request)
@@ -56,5 +58,20 @@ class FrontendController extends Controller
         $kategori = Kategori::all();
         $artikel = $tag->artikel()->latest()->paginate(5);
         return view('tag', compact('artikel', 'tag', 'kategori'));
+    }
+
+    public function detailrekom(Rekomendasi $rekomendasi)
+    {
+        $rekomendasi = Rekomendasi::all();
+        $artikel = Artikel::all();
+        return view('rekomendasi', compact('rekomendasi', 'artikel'));
+    }
+
+    public function about()
+    {
+        $artikel = Artikel::with('kategori','tag')->orderBy('created_at','desc')->paginate(4);
+        $kategori = Kategori::all();
+        $tag = Tag::all();
+        return view('about', compact('artikel', 'kategori', 'tag'));
     }
 }

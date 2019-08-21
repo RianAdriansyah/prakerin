@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Colorlib Wordify &mdash; Minimal Blog Template</title>
+    <title>About &mdash; Sneakers Room</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,9 +35,9 @@
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
+              <form action="{{ route('news') }}" class="search-top-form">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+                  <input type="text" name="cari" placeholder="Type keyword to search...">
                 </form>
               </div>
             </div>
@@ -60,29 +60,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="category">Asia</a>
-                    <a class="dropdown-item" href="category">Europe</a>
-                    <a class="dropdown-item" href="category">Dubai</a>
-                    <a class="dropdown-item" href="category">Africa</a>
-                    <a class="dropdown-item" href="category">South America</a>
-                  </div>
-
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="category">Lifestyle</a>
-                    <a class="dropdown-item" href="category">Food</a>
-                    <a class="dropdown-item" href="category">Adventure</a>
-                    <a class="dropdown-item" href="category">Travel</a>
-                    <a class="dropdown-item" href="category">Business</a>
+                    @foreach($kategori as $navcat)
+                    <a class="dropdown-item" href="{{ route('category', $navcat->slug) }}">{{ $navcat->nama_kategori }}</a>
+                    @endforeach
                   </div>
-
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="about">About</a>
@@ -107,8 +91,8 @@
             
             <div class="row">
               <div class="col-md-12">
-                <h2 class="mb-4">Hi There! I'm Craig David</h2>
-                <p class="mb-5"><img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="img-fluid"></p>
+                <h2 class="mb-4">Hi There! I'm Rian Adriansyah</h2>
+                <p class="mb-5"><img src="{{ asset('assets/frontend/images/me.jpg') }}" alt="Image placeholder" class="img-fluid"></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum minima eveniet recusandae suscipit eum laboriosam fugit amet deleniti iste et. Ad dolores, necessitatibus non saepe tenetur impedit commodi quibusdam natus repellat, exercitationem accusantium perferendis officiis. Laboriosam impedit quia minus pariatur!</p>
                 <p>Dignissimos iste consectetur, nemo magnam nulla suscipit eius quibusdam, quo aperiam quia quae est explicabo nostrum ab aliquid vitae obcaecati tenetur beatae animi fugiat officia id ipsam sint? Obcaecati ea nisi fugit assumenda error totam molestiae saepe fugiat officiis quam?</p>
                 <p>Culpa porro quod doloribus dolore sint. Distinctio facilis ullam voluptas nemo voluptatum saepe repudiandae adipisci officiis, explicabo eaque itaque sed necessitatibus, fuga, ea eius et aliquam dignissimos repellendus impedit pariatur voluptates. Dicta perferendis assumenda, nihil placeat, illum quibusdam. Vel, incidunt?</p>
@@ -121,375 +105,33 @@
                 <h2>My Latest Posts</h2>
               </div>
               <div class="col-md-12">
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_10.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
+                  @foreach($artikel as $isi)
+                  <div class="post-entry-horzontal">
+                    <a href="{{ route('single', $isi->slug) }}">
+                      <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
+                      <span class="text">
+                        <div class="post-meta">
+                          <span class="mr-2">{{$isi->created_at}}</span> &bullet;
+                        <span class="mr-2">{{ $isi->kategori->nama_kategori }}</span> &bullet;
+                        </div>
+                        <h2>{{ $isi->judul }}</h2>
+                      </span>
+                    </a>
+                  </div>
+                  @endforeach
                 <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_11.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_12.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_9.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_8.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_7.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_6.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_5.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
-                <div class="post-entry-horzontal">
-                  <a href="single">
-                    <div class="image" style="background-image: url({{ asset('assets/frontend/images/img_4.jpg') }}"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib"> Colorlib</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                      </div>
-                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
-                    </span>
-                  </a>
-                </div>
-                <!-- END post -->
-
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <nav aria-label="Page navigation" class="text-center">
-                  <ul class="pagination">
-                      <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">4</a></li>
-                      <li class="page-item"><a class="page-link" href="#">5</a></li>
-                      <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
-                    </ul>
-                </nav>
-              </div>
-            </div>
-
-            
-
           </div>
 
           <!-- END main-content -->
 
-          <div class="col-md-12 col-lg-4 sidebar">
-            <!-- END sidebar-box -->
-            <div class="sidebar-box">
-              <div class="bio text-center">
-                <img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Image Placeholder" class="img-fluid">
-                <div class="bio-body">
-                  <h2>Meagan Smith</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
-                  <p class="social">
-                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- END sidebar-box -->  
-            <div class="sidebar-box">
-              <h3 class="heading">Popular Posts</h3>
-              <div class="post-entry-sidebar">
-                <ul>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_2.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="{{ asset('assets/frontend/images/img_12.jpg') }}" alt="Image placeholder" class="mr-4">
-                      <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- END sidebar-box -->
-
-            <div class="sidebar-box">
-              <h3 class="heading">Categories</h3>
-              <ul class="categories">
-                <li><a href="#">Food <span>(12)</span></a></li>
-                <li><a href="#">Travel <span>(22)</span></a></li>
-                <li><a href="#">Lifestyle <span>(37)</span></a></li>
-                <li><a href="#">Business <span>(42)</span></a></li>
-                <li><a href="#">Adventure <span>(14)</span></a></li>
-              </ul>
-            </div>
-            <!-- END sidebar-box -->
-
-            <div class="sidebar-box">
-              <h3 class="heading">Tags</h3>
-              <ul class="tags">
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-              </ul>
-            </div>
-          </div>
+          @include('layouts.sidebar')
           <!-- END sidebar -->
 
         </div>
       </div>
     </section>
   
-    <footer class="site-footer">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-4">
-              <h3>About Us</h3>
-              <p class="mb-4">
-                <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="img-fluid">
-              </p>
-
-              <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
-            </div>
-            <div class="col-md-6 ml-auto">
-              <div class="row">
-                <div class="col-md-7">
-                  <h3>Latest Post</h3>
-                  <div class="post-entry-sidebar">
-                    <ul>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_6.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_3.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <img src="{{ asset('assets/frontend/images/img_4.jpg') }}" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-1"></div>
-                
-                <div class="col-md-4">
-
-                  <div class="mb-5">
-                    <h3>Quick Links</h3>
-                    <ul class="list-unstyled">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Travel</a></li>
-                      <li><a href="#">Adventure</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  
-                  <div class="mb-5">
-                    <h3>Social</h3>
-                    <ul class="list-unstyled footer-social">
-                    <li><a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a></li>
-                    <li><a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a></li>
-                    <li><a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <p class="small">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- END footer -->
-
-    </div>
-    
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
-    <script src="{{ asset('assets/frontend/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery-migrate-3.0.0.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/jquery.stellar.min.js') }}"></script>
-
-    
-    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
-  </body>
-</html>
+    @include('layouts.footer')
+      

@@ -25,6 +25,7 @@
 			<li><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Artikel</a></li>
 			<li><a href="{{ route('kategori.index') }}"><em class="fa fa-calendar">&nbsp;</em> Kategori</a></li>
 			<li><a href="{{ route('tag.index') }}"><em class="fa fa-bar-chart">&nbsp;</em> Tag</a></li>
+			<li><a href="{{ route('rekomendasi.index') }}"><em class="fa fa-toggle-off">&nbsp;</em> Rekomendasi</a></li>
 			<li><a href="{{ route('logout') }}" 
 				onclick="event.preventDefault();
                 	document.getElementById('logout-form').submit();">

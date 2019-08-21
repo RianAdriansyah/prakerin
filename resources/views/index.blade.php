@@ -35,9 +35,9 @@
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
+              <form action="{{ route('news') }}" class="search-top-form">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+                  <input type="text" name="cari" placeholder="Type keyword to search...">
                 </form>
               </div>
             </div>
@@ -55,14 +55,11 @@
         
         <nav class="navbar navbar-expand-md  navbar-light bg-light">
           <div class="container">
-            
-           
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                   <a class="nav-link active" href="/">Home</a>
                 </li>
-                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
@@ -88,9 +85,25 @@
       <section class="site-section pt-5 pb-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-12">  
+                @foreach ($rekomendasi as $item)
               <div class="owl-carousel owl-theme home-slider">
+                <div>
+                <a href="{{ route('single', $item->artikel->slug) }}" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/img/rekomendasi/'.$item->foto) }} ">
+                    <div class="text half-to-full">
+                    <span class="category mb-5">{{ $item->artikel->kategori->nama_kategori }}</span>
+                      <div class="post-meta">
+                          <span class="mr-2">{{$item->created_at}}</span> &bullet;
+                          <span class="mr-2">{{ $item->artikel->kategori->nama_kategori }}</span> &bullet;
+                      </div>
+                    <h3>{{ $item->artikel->judul }}</h3>
+                    <p>{!! $item->artikel->konten !!}</p>
+                    </div>
+                  </a>
+                </div>
+                <div>
+                    @endforeach
+              {{-- <div class="owl-carousel owl-theme home-slider">
                 <div>
                   <a href="#" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ asset('assets/frontend/images/gmx.jpg') }} ">
                     <div class="text half-to-full">
@@ -137,7 +150,7 @@
                     </div>
                   </a>
                 </div>
-              </div>
+              </div> --}}
               
             </div>
           </div>
@@ -165,9 +178,8 @@
                     <img src="{{ asset('assets/img/artikel/'.$data->foto) }}" alt="Image placeholder">
                     <div class="blog-content-body">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> Rian Adriansyah</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                        <span class="mr-2">{{$data->created_at}}</span> &bullet;
+                        <span class="mr-2">{{ $data->kategori->nama_kategori }}</span> &bullet;
                       </div>
                       <h2>{{ $data->judul }}</h2>
                     </div>

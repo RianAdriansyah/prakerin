@@ -23,6 +23,11 @@ class Artikel extends Model
         return $this->belongsTo('App\Kategori', 'kategori_id');
     }
 
+    public function rekomendasi()
+    {
+        return $this->belongsTo('App\Rekomendasi', 'artikel_id');
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

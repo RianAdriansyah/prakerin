@@ -35,9 +35,9 @@
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
+              <form action="{{ route('news') }}" class="search-top-form" method="GET">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+                  <input type="text" name="cari" placeholder="Type keyword to search...">
                 </form>
               </div>
             </div>
@@ -92,6 +92,7 @@
             <h2 class="mb-4">Berita Seputar Sneakers</h2>
           </div>
         </div>
+        
         <div class="row blog-entries">
           <div class="col-md-12 col-lg-8 main-content">
             <div class="row mb-5 mt-5">
@@ -104,9 +105,8 @@
                     <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $isi->user->name }}</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Sneakers</span> &bullet;
+                        <span class="mr-2">{{$isi->created_at}}</span> &bullet;
+                        <span class="mr-2">{{ $isi->kategori->nama_kategori }}</span> &bullet;
                       </div>
                       <h2>{{ $isi->judul }}</h2>
                     </span>

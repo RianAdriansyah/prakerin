@@ -25,7 +25,8 @@
                 <h3 class="heading">Brand</h3>
                 <ul class="categories">
                     @foreach($kategori as $data)
-                  <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}<span>(12)</span></a></li>
+                <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}
+                  <span>{{ $data->Artikel->count() }}</span></a></li>
                   @endforeach
                 </ul>
               </div>

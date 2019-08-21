@@ -35,9 +35,9 @@
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
+              <form action="{{ route('news') }}" class="search-top-form">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+                  <input type="text" name="cari" placeholder="Type keyword to search...">
                 </form>
               </div>
             </div>
@@ -93,7 +93,6 @@
           <div class="col-md-12 col-lg-8 main-content">
             <img src="{{ asset('assets/img/artikel/'.$artikel->foto) }}" alt="Image" class="img-fluid mb-5">
             <div class="post-meta">
-              <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_1.jpg') }}" alt="Colorlib" class="mr-2">{{ $artikel->user->name }}</span>&bullet;
               <span class="mr-2">March 15, 2018 </span> &bullet;
               <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
             </div>
@@ -182,7 +181,7 @@
                 <h3 class="heading">Brand</h3>
                 <ul class="categories">
                     @foreach($kategori as $data)
-                  <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}<span>(12)</span></a></li>
+                <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}<span>{{ $data->Artikel->count() }}</span></a></li>
                   @endforeach
                 </ul>
               </div>
