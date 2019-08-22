@@ -95,10 +95,8 @@
                     <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$listcat->foto) }} )"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Colorlib"> {{ $listcat->user->name }}</span>&bullet;
-                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                        <span class="mr-2">Sneakers</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      <span class="mr-2">{{ $listcat->created_at }}</span> &bullet;
+                      <span class="mr-2">{{ $listcat->kategori->nama_kategori }}</span>
                       </div>
                       <h2>{{ $listcat->judul }}</h2>
                     </span>
@@ -140,7 +138,7 @@
               <h3 class="heading">Tags</h3>
               <ul class="tags">
                 @foreach($tag as $tags)
-                <li><a href="#">{{ $tags->nama_tag }}</a></li>
+              <li><a href="{{ route('tag', $tags->slug) }}">{{ $tags->nama_tag }}</a></li>
                 @endforeach
               </ul>
             </div>

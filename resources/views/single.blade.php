@@ -28,10 +28,10 @@
           <div class="container">
             <div class="row">
               <div class="col-9 social">
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-instagram"></span></a>
-                <a href="#"><span class="fa fa-youtube-play"></span></a>
+                <a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
+                <a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a>
+                <a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a>
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
@@ -93,12 +93,12 @@
           <div class="col-md-12 col-lg-8 main-content">
             <img src="{{ asset('assets/img/artikel/'.$artikel->foto) }}" alt="Image" class="img-fluid mb-5">
             <div class="post-meta">
-              <span class="mr-2">March 15, 2018 </span> &bullet;
+            <span class="mr-2">{{ $artikel->created_at }}</span> &bullet;
               <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
             </div>
             <h1 class="mb-4">{{ $artikel->judul }}</h1>
             @foreach($artikel->tag as $singletag)
-            <a class="category mb-5" href="#">{{ $singletag->nama_tag }}</a>
+          <a class="category mb-5" href="{{ route('tag', $singletag->slug) }}">{{ $singletag->nama_tag }}</a>
             @endforeach
             <div class="post-content-body">
               <p>{!! $artikel->konten !!}</p>

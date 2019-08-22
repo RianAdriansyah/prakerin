@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Edit Rekomendasi | {{ Auth::user()->name }}</title>
+	<title>{{ $rekomendasi->artikel->judul }} | {{ Auth::user()->name }}</title>
 	<link href="{{ asset('assets/backend/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/css/datepicker3.css') }}" rel="stylesheet">
@@ -31,27 +31,26 @@
 		
 		<div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">Edit Rekomendasi</h1>
+      <h1 class="page-header">Data Rekomendasi</h1>
 			</div>
 		</div><!--/.row-->
 		
 		<div class="container">
       <div class="row">
         <div class="col col-lg-11">
-            <form action="{{ route('rekomendasi.update', $rekomendasi->id) }}" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="_method" value="PATCH">
+            <form action="{{ route('rekomendasi.show', $rekomendasi->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                   <div class="form-group">
                     <label for="">Judul</label>
-                  <input type="text" name="judul" class="form-control" value="{{ $rekomendasi->artikel->judul }}">
+                  <input type="text" name="judul" class="form-control" value="{{ $rekomendasi->artikel->judul }}" disabled>
                   </div>
                   <div class="form-group">
                     <label for="">Cover</label>
-                    <input type="file" name="foto" id="foto" class="form-control">
+                    <img src="{{ asset('assets/img/rekomendasi/'.$rekomendasi->foto)}}" width="100%">
                   </div>
                     <div class="form-group">
                       <label for="">Artikel</label>
-                      <select name="artikel_id" class="form-control">
+                      <select name="artikel_id" class="form-control" disabled>
                         @foreach($artikel as $data)
                         <option value="{{ $data->id }}">
                           {{ $data->judul }}</option>

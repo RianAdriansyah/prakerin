@@ -12,7 +12,7 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $artikel = Artikel::with('kategori','tag')->orderBy('created_at','desc')->paginate(4);
+        $artikel = Artikel::with('kategori','tag')->paginate(6);
         $kategori = Kategori::all();
         $tag = Tag::all();
         $rekomendasi = Rekomendasi::all();
