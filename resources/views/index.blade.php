@@ -20,7 +20,7 @@
                           <span class="mr-2">{{ $item->artikel->kategori->nama_kategori }}</span> &bullet;
                       </div>
                     <h3>{{ $item->artikel->judul }}</h3>
-                    <p>{!! $item->artikel->konten !!}</p>
+                    <p>{!! str_limit( $item->artikel->konten, $limit = 100, $end = '...') !!}</p>
                     </div>
                   </a>
                 </div>
