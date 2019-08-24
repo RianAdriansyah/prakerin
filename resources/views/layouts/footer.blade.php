@@ -7,7 +7,8 @@
               <p class="mb-4">
                 <img src="{{ asset('assets/frontend/images/me.jpg') }}" alt="Image placeholder" class="img-fluid">
               </p>
-            <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="{{ route('about') }}">Read More</a></p>
+            <p>My name is Rian Adriansyah, you can call me Rian, yan, RianAd, ian, or anything whatever you want.
+               <a href="{{ route('about') }}">Read More</a></p>
             </div>
             <div class="col-md-6 ml-auto">
               <div class="row">
@@ -29,10 +30,10 @@
                   <div class="mb-5">
                     <h3>Social</h3>
                     <ul class="list-unstyled footer-social">
-                      <li><a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span> Twitter</a></li>
-                      <li><a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span> Facebook</a></li>
-                      <li><a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span> Instagram</a></li>
-                      <li><a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span> Youtube</a></li>
+                      <li><a target="blank" href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span> Twitter</a></li>
+                      <li><a target="blank" href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span> Facebook</a></li>
+                      <li><a target="blank" href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span> Instagram</a></li>
+                      <li><a target="blank" href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span> Youtube</a></li>
                     </ul>
                   </div>
                 </div>

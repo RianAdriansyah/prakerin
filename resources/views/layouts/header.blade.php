@@ -24,10 +24,10 @@
           <div class="container">
             <div class="row">
               <div class="col-9 social">
-                <a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
-                <a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a>
-                <a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a>
-                <a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a>
+                <a target="blank" href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
+                <a target="blank" href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a>
+                <a target="blank" href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a>
+                <a target="blank" href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a>
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
