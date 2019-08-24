@@ -105,7 +105,7 @@
                     <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$isi->foto) }})"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="mr-2">{{$isi->created_at}}</span> &bullet;
+                        <span class="mr-2">{{$isi->created_at->diffForHumans()}}</span> &bullet;
                         <span class="mr-2">{{ $isi->kategori->nama_kategori }}</span> &bullet;
                       </div>
                       <h2>{{ $isi->judul }}</h2>

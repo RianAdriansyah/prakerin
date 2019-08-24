@@ -60,13 +60,6 @@ class FrontendController extends Controller
         return view('tag', compact('artikel', 'tag', 'kategori'));
     }
 
-    public function detailrekom(Rekomendasi $rekomendasi)
-    {
-        $rekomendasi = Rekomendasi::all();
-        $artikel = Artikel::all();
-        return view('rekomendasi', compact('rekomendasi', 'artikel'));
-    }
-
     public function about()
     {
         $artikel = Artikel::with('kategori','tag')->orderBy('created_at','desc')->paginate(4);

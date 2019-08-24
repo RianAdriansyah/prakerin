@@ -5,9 +5,9 @@
             <div class="col-md-4">
               <h3>About Us</h3>
               <p class="mb-4">
-                <img src="{{ asset('assets/frontend/images/img_1.jpg') }}" alt="Image placeholder" class="img-fluid">
+                <img src="{{ asset('assets/frontend/images/me.jpg') }}" alt="Image placeholder" class="img-fluid">
               </p>
-              <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
+            <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="{{ route('about') }}">Read More</a></p>
             </div>
             <div class="col-md-6 ml-auto">
               <div class="row">
@@ -17,7 +17,10 @@
                   <div class="mb-5">
                     <h3>Brand</h3>
                     <ul class="list-unstyled">
-                        @foreach($kategori as $footcat)
+                      @php
+                          $cats = \App\Kategori::take(5)->get();
+                      @endphp
+                        @foreach($cats as $footcat)
                       <li><a href="{{ route('category', $footcat->slug) }}">{{ $footcat->nama_kategori }}</a></li>
                       @endforeach
                     </ul>

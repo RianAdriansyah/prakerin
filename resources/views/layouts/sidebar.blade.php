@@ -3,11 +3,11 @@
               <!-- END sidebar-box -->
               <div class="sidebar-box">
                 <div class="bio text-center">
-                  <img src="{{ asset('assets/frontend/images/person_2.jpg') }}" alt="Image Placeholder" class="img-fluid">
+                  <img src="{{ asset('assets/frontend/images/mee.jpg') }}" alt="Image Placeholder" class="img-fluid">
                   <div class="bio-body">
                     <h2>Rian Adriansyah</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                    <p><a href="about" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <p><a href="{{ route('about') }}" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
                     <p class="social">
                       <a href="https://web.facebook.com/rian.adriansyah.98434" class="p-2"><span class="fa fa-facebook"></span></a>
                       <a href="https://twitter.com/RianAd01" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -24,7 +24,10 @@
               <div class="sidebar-box">
                 <h3 class="heading">Brand</h3>
                 <ul class="categories">
-                    @foreach($kategori as $data)
+                  @php
+                      $catall = \App\Kategori::all();
+                  @endphp
+                    @foreach($catall as $data)
                 <li><a href="{{ route('category', $data->slug) }}">{{ $data->nama_kategori }}
                   <span>{{ $data->Artikel->count() }}</span></a></li>
                   @endforeach
@@ -35,7 +38,10 @@
               <div class="sidebar-box">
                 <h3 class="heading">Tags</h3>
                 <ul class="tags">
-                    @foreach($tag as $navtag)
+                  @php
+                      $tagall = \App\Tag::all();
+                  @endphp
+                    @foreach($tagall as $navtag)
                     <li><a href="{{ route('tag', $navtag->slug) }}">{{ $navtag->nama_tag }}</a></li>
                     @endforeach
                 </ul>

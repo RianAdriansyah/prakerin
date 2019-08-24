@@ -1,8 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>{{ $tag->nama_tag }} &mdash; Sneakers Room</title>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">
@@ -11,9 +7,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
 
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
@@ -28,7 +24,7 @@
           <div class="container">
             <div class="row">
               <div class="col-9 social">
-              <a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
+                <a href="https://twitter.com/RianAd01"><span class="fa fa-twitter"></span></a>
                 <a href="https://web.facebook.com/rian.adriansyah.98434"><span class="fa fa-facebook"></span></a>
                 <a href="https://www.instagram.com/rian_ad01/"><span class="fa fa-instagram"></span></a>
                 <a href="https://www.youtube.com/channel/UCo9Uy0N2dhhXHTeI8y7ywzw?view_as=subscriber"><span class="fa fa-youtube-play"></span></a>
@@ -58,21 +54,24 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="../">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
+                  <a class="nav-link dropdown-toggle" href="category" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    @foreach($kategori as $catt)
-                    <a class="dropdown-item" href="{{ route('category', $catt->slug) }}">{{ $catt->nama_kategori }}</a>
+                      @php
+                          $catall = \App\Kategori::all();
+                      @endphp
+                    @foreach($catall as $navcat)
+                    <a class="dropdown-item" href="{{ route('category', $navcat->slug) }}">{{ $navcat->nama_kategori }}</a>
                     @endforeach
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../about/">About</a>
+                <a class="nav-link" href="{{ route('about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../news/">Berita</a>
+                  <a class="nav-link" href="{{ route('news') }}">Berita</a>
                 </li>
               </ul>
               
@@ -80,46 +79,3 @@
           </div>
         </nav>
       </header>
-      <!-- END header -->
-
-
-    <section class="site-section pt-5">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <h2 class="mb-4">Tag : {{ $tag->nama_tag }}</h2>
-          </div>
-        </div>
-        <div class="row blog-entries">
-          <div class="col-md-12 col-lg-8 main-content">
-            <div class="row mb-5 mt-5">
-
-              <div class="col-md-12">
-                @foreach($tag->artikel as $taglist)
-                <div class="post-entry-horzontal">
-                  <a href="{{ route('single', $taglist->slug) }}">
-                    <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url({{ asset('assets/img/artikel/'.$taglist->foto) }} )"></div>
-                    <span class="text">
-                      <div class="post-meta">
-                      <span class="mr-2">{{ $taglist->created_at->diffForHumans() }}</span> &bullet;
-                      <span class="mr-2">{{ $taglist->kategori->nama_kategori }}</span>
-                      </div>
-                      <h2>{{ $taglist->judul }}</h2>
-                    </span>
-                  </a>
-                </div>
-                @endforeach
-              </div>
-            </div>
-          </div>
-
-          <!-- END main-content -->
-
-          @include('layouts.sidebar')
-          <!-- END sidebar -->
-
-        </div>
-      </div>
-    </section>
-
-    @include('layouts.footer')
