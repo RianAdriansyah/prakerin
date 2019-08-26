@@ -63,7 +63,9 @@
                           $catall = \App\Kategori::all();
                       @endphp
                     @foreach($catall as $navcat)
+                    @if ($navcat->Artikel->count() > 0)
                     <a class="dropdown-item" href="{{ route('category', $navcat->slug) }}">{{ $navcat->nama_kategori }}</a>
+                    @endif
                     @endforeach
                   </div>
                 </li>

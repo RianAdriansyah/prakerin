@@ -64,7 +64,9 @@
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown05">
                     @foreach($kategori as $catt)
+                    @if ($catt->Artikel->count() > 0)
                     <a class="dropdown-item" href="{{ route('category', $catt->slug) }}">{{ $catt->nama_kategori }}</a>
+                    @endif
                     @endforeach
                   </div>
                 </li>
