@@ -103,10 +103,9 @@
               <p>{!! $artikel->konten !!}</p>
             </div>
             <div class="pt-5">
-              <p>Categories: 
-            @foreach($kategori as $cat) 
-                <a href="{{ route('category', $cat->slug) }}">{{ $cat->nama_kategori }}, </a>
-            @endforeach
+              <p>Category: 
+                <a href="{{ route('category', $artikel->kategori->slug) }}">{{ $artikel->kategori->nama_kategori }} </a>
+            
             </p>
             </div>
           </div>

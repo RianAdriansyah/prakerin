@@ -45,6 +45,7 @@
                             <a href="{{ route('rekomendasi.create') }}" 
                             class="btn btn-primary">Tambah</a>
                         </center>
+                        
                         <br>
                             <div class="table-responsive">
                                 <table class="table table-striped text-center">

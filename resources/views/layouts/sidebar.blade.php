@@ -31,8 +31,10 @@
                       $catall = \App\Kategori::all();
                   @endphp
                     @foreach($catall as $data)
+                      {{-- @if ($data->Artikel->count > 0) --}}
                 <li><a href="{{ route('category', $data->slug) }}" class="text-primary">{{ $data->nama_kategori }}
                   <span>{{ $data->Artikel->count() }}</span></a></li>
+                    {{-- @endif --}}
                   @endforeach
                 </ul>
               </div>
@@ -45,7 +47,9 @@
                       $tagall = \App\Tag::all();
                   @endphp
                     @foreach($tagall as $navtag)
+                      {{-- @if ($navtag->Artikel->count > 0) --}}
                     <li><a href="{{ route('tag', $navtag->slug) }}">{{ $navtag->nama_tag }}</a></li>
+                      {{-- @endif --}}
                     @endforeach
                 </ul>
               </div>
